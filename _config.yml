@@ -16,10 +16,10 @@ minimal_mistakes_skin    : "aqua" # "air", "aqua", "contrast", "dark", "dirt", "
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Site Title"
+title                    : "Poor developer"
 title_separator          : "-"
-name                     : "Your Name"
-description              : "An amazing website."
+name                     : "Lee Kyoung Il (kellin)"
+description              : "The story of a writer who works hard but works hard. (Officially the developer)"
 url                      : "https://leekyoungil.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -103,11 +103,11 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
+  name             : "kellin"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "I am an amazing person."
   location         : "Somewhere"
-  email            :
+  email            : "leekyoungil@gmail.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
