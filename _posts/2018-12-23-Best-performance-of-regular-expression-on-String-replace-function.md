@@ -5,3 +5,6 @@ categories: Java
 ---
 
 I've been working on process of a really big String replace on the Java recently.
+That simnply, When input text on my code. Regular expression working at least 1000 times.
+Namely, makes String heap memory value of that many datas.
+Sometimes, This situation get strains on the system. Because the text string is a little large.
