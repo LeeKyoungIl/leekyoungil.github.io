@@ -16,7 +16,7 @@ minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "n
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Poor developer"
+title                    : "The Diary of Kellin"
 title_separator          : "-"
 name                     : "Lee Kyoung Il (kellin)"
 description              : "The story of a writer who works hard but works hard. (Officially the developer)"
