@@ -5,3 +5,14 @@ categories: Java
 ---
 
 test
+Best performance of regular expression on String replace function.
+Best performance of regular expression on String replace function.
+Best performance of regular expression on String replace function.
+Best performance of regular expression on String replace function.
+Best performance of regular expression on String replace function.
+Best performance of regular expression on String replace function.
+Best performance of regular expression on String replace function.
+Best performance of regular expression on String replace function.
+Best performance of regular expression on String replace function.
+Best performance of regular expression on String replace function.
+Best performance of regular expression on String replace function.
