@@ -5,7 +5,11 @@ categories: Java
 ---
 
 I've been working on process of a really big String replace on the Java recently.
-That simnply, When input text on my code. Regular expression working at least 1000 times.
-Namely, makes String heap memory value of that many datas.
-Sometimes, This situation get strains on the system. Because the text string is a little large.
-And at least 1000 similar text data are generated on memory.
+
+It's simnply. 
+
+When text input to my code. Regular expression works at least 1000 times.
+Namely, Strings are created in the Heap memory so much.
+
+Sometimes, This situation get strains on the system memory resource. 
+Because, the text string is a little large And at least 1000 similar text data are generated on memory.
