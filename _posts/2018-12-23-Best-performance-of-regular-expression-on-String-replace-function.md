@@ -6,7 +6,7 @@ categories: Java
 
 I've been working on process of a really big String replace on the Java recently.
 
-It's simple. 
+Working flow is simple. 
 
 When text input to my code, regular expression works at least 1,X00 times.
 Namely, Strings are created in the Heap memory so much.
