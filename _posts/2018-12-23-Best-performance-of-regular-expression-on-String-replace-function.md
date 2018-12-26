@@ -9,7 +9,7 @@ I've been working on process of a really big String replace on the Java recently
 Working flow is simple. 
 
 When text input to my code, regular expression works at least 1,X00 times.
-Namely, Strings are created in the Heap memory so much.
+Namely, strings are created in the Heap memory so much.
 
 Sometimes, this situation gives strain on the system memory resource. 
-Because, the text string is a little large And more then 1,X00 similar text data are generated on memory.
+Because, the text string is a little large and more than 1,X00 similar text data are generated on memory.
