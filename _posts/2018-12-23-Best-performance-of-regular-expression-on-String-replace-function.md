@@ -17,9 +17,35 @@ Because, the text string is a little large and more than 1,X00 similar text data
 Let's looking the code.
 
 ```java
-public static String replaceAll (Pattern p, String txt, String replacement) {
-  return p.matcher(txt).replaceAll(replacement);
+public static String replaceAll (Pattern pattern, String txt, String replacement) {
+  return pattern.matcher(txt).replaceAll(replacement);
 }
 ```
 
 Nothing to special?
+
+But, this code runs 1,x00 per user request.
+
+For example.
+
+```java
+String resultString = "Test String. (this string is more then 5kb.)";
+for (Map.Entry<String, String> replaceEntry : dictionaryMap.entrySet()) {
+    ...
+    resultString = replaceAll(regexPattern, resultString, replaceValue);
+    ...
+}
+```
+
+At this time, what will happens in the heap memory?
+May be, more then 1,000 Immutable string objects will be created in the heap memory.
+
+In fact, it's not a big deal.
+
+The string objects will be cleaned by the garbage collector. 
+(Somebody talked me, god only knows, when garbage collector will be executed.)
+
+We can almost see these graphs.
+![image](https://user-images.githubusercontent.com/4101636/50532906-a934fa00-0b63-11e9-9668-196000d60862.png)
+
+It's ordinary graph of garbage collector.
