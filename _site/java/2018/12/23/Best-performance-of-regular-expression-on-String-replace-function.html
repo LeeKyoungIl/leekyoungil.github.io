@@ -1,0 +1,39 @@
+<p>I&#39;ve been working on process of a really big String replace on the Java recently.</p>
+
+<p>Working flow is simple. </p>
+
+<p>When text input to my code, regular expression works at least 1,X00 times.
+Namely, strings are created in the Heap memory so much.</p>
+
+<p>Sometimes, this situation gives strain on the system memory resource. 
+Because, the text string is a little large and more than 1,X00 similar text data are generated on memory.</p>
+
+<p>Let&#39;s looking the code.</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">replaceAll</span> <span class="o">(</span><span class="n">Pattern</span> <span class="n">pattern</span><span class="o">,</span> <span class="n">String</span> <span class="n">txt</span><span class="o">,</span> <span class="n">String</span> <span class="n">replacement</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">return</span> <span class="n">pattern</span><span class="o">.</span><span class="na">matcher</span><span class="o">(</span><span class="n">txt</span><span class="o">).</span><span class="na">replaceAll</span><span class="o">(</span><span class="n">replacement</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>Nothing to special?</p>
+
+<p>But, this code runs 1,x00 per user request.</p>
+
+<p>For example.</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">String</span> <span class="n">resultString</span> <span class="o">=</span> <span class="s">"Test String. (this string is more then 5kb.)"</span><span class="o">;</span>
+<span class="k">for</span> <span class="o">(</span><span class="n">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">replaceEntry</span> <span class="o">:</span> <span class="n">dictionaryMap</span><span class="o">.</span><span class="na">entrySet</span><span class="o">())</span> <span class="o">{</span>
+    <span class="o">...</span>
+    <span class="n">resultString</span> <span class="o">=</span> <span class="n">replaceAll</span><span class="o">(</span><span class="n">regexPattern</span><span class="o">,</span> <span class="n">resultString</span><span class="o">,</span> <span class="n">replaceValue</span><span class="o">);</span>
+    <span class="o">...</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>At this time, what will happens in the heap memory?
+May be, more then 1,000 Immutable string objects will be created in the heap memory.</p>
+
+<p>In fact, it&#39;s not a big deal.</p>
+
+<p>The string objects will be cleaned by the garbage collector. 
+(Somebody talked me, god only knows, when garbage collector will be executed.)</p>
+
+<p>We can almost see these graphs.
+<img src="https://user-images.githubusercontent.com/4101636/50532906-a934fa00-0b63-11e9-9668-196000d60862.png" alt="image"></p>
+
+<p>It&#39;s ordinary graph of garbage collector.</p>

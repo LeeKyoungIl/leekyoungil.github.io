@@ -1,5 +1,5 @@
 ---
 layout: posts
 title: About
-permalink: /posts/
+permalink: /_posts/
 ---
