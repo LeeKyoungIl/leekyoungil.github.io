@@ -82,7 +82,7 @@
 
 
 <div class="post-header">
-  <h1 class="post-title">Best performance of regular expression on String replace function.</h1>
+  <h1 class="post-title">Best performance of regular expression with String replace function.</h1>
 </div>
 <div class="post-header">
   <p class="post-meta">December 23, 2018 — 21:26</p>
@@ -94,9 +94,9 @@
 
   <article class="post-content">
     <div class = "blurb-blog">
-    <p>I&#39;ve been working on process of a really big String replace on the Java recently.</p>
+    <p>I’ve been working on process of a really big String replace on the Java recently.</p>
 
-<p>Working flow is simple. </p>
+<p>Working flow is simple.</p>
 
 <p>When text input to my code, regular expression works at least more than 1,000 times.
 Namely, strings are created in the Heap memory so much.</p>
@@ -104,53 +104,82 @@ Namely, strings are created in the Heap memory so much.</p>
 <p>Sometimes, this situation gives strain on the system memory resource. 
 Because, the text string is a little large and more than 1,X00 similar text data are generated on memory.</p>
 
-<p>Let&#39;s looking the code.</p>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">replaceAll</span> <span class="o">(</span><span class="n">Pattern</span> <span class="n">pattern</span><span class="o">,</span> <span class="n">String</span> <span class="n">txt</span><span class="o">,</span> <span class="n">String</span> <span class="n">replacement</span><span class="o">)</span> <span class="o">{</span>
+<p>Let’s looking the code.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">replaceAll</span> <span class="o">(</span><span class="n">Pattern</span> <span class="n">pattern</span><span class="o">,</span> <span class="n">String</span> <span class="n">txt</span><span class="o">,</span> <span class="n">String</span> <span class="n">replacement</span><span class="o">)</span> <span class="o">{</span>
   <span class="k">return</span> <span class="n">pattern</span><span class="o">.</span><span class="na">matcher</span><span class="o">(</span><span class="n">txt</span><span class="o">).</span><span class="na">replaceAll</span><span class="o">(</span><span class="n">replacement</span><span class="o">);</span>
 <span class="o">}</span>
-</code></pre></div>
+</code></pre></div></div>
+
 <p>Nothing special?</p>
 
 <p>But, this code runs more than 1,000 times per user request.</p>
 
 <p>For example.</p>
-<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">String</span> <span class="n">resultString</span> <span class="o">=</span> <span class="s">"Test String. (this string is more then 5kb.)"</span><span class="o">;</span>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">String</span> <span class="n">resultString</span> <span class="o">=</span> <span class="s">"Test String. (this string is more then 5kb.)"</span><span class="o">;</span>
 <span class="k">for</span> <span class="o">(</span><span class="n">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">replaceEntry</span> <span class="o">:</span> <span class="n">dictionaryMap</span><span class="o">.</span><span class="na">entrySet</span><span class="o">())</span> <span class="o">{</span>
     <span class="o">...</span>
     <span class="n">resultString</span> <span class="o">=</span> <span class="n">replaceAll</span><span class="o">(</span><span class="n">regexPattern</span><span class="o">,</span> <span class="n">resultString</span><span class="o">,</span> <span class="n">replaceValue</span><span class="o">);</span>
     <span class="o">...</span>
 <span class="o">}</span>
-</code></pre></div>
+</code></pre></div></div>
+
 <p>At this time, what will be happened in the heap memory?</p>
 
 <p>Maybe, more than 1,000 times of Immutable string objects will be created in the heap memory.</p>
 
-<p>In fact, it&#39;s not a big deal.</p>
+<p>In fact, it’s not a big deal.</p>
 
-<p>The string objects will be cleaned by the garbage collector. <br>
+<p>The string objects will be cleaned by the garbage collector. <br />
 (Somebody told me, God only knows when garbage collector executed.)</p>
 
 <p>We will see the graph as below.
-<img src="https://user-images.githubusercontent.com/4101636/50532906-a934fa00-0b63-11e9-9668-196000d60862.png" alt="image"></p>
+<img src="https://user-images.githubusercontent.com/4101636/50532906-a934fa00-0b63-11e9-9668-196000d60862.png" alt="image" width="100%" /></p>
 
 <p>This is ordinary graph of garbage collector.</p>
 
-<p>But, Live data is too big. <br>
+<p>But, live data is too big. <br />
 It seems to be over 3~4G roughly.</p>
 
 <p>Check memory usage by profiler.
-<img src="https://user-images.githubusercontent.com/4101636/50547521-1dfc5700-0c7e-11e9-9657-c2e4c0a4fddc.png" alt="image"></p>
+<img src="https://user-images.githubusercontent.com/4101636/50547521-1dfc5700-0c7e-11e9-9657-c2e4c0a4fddc.png" alt="image" width="100%" /></p>
 
-<p>Array of char and byte occupy a large part of memory.</p>
+<p>Arrays of char and byte occupy a large part of memory.</p>
 
-<p>Then, What is the solution?</p>
+<p>Then, what is the solution?</p>
 
-<p>I think there is 2 kind of solutions.</p>
+<p>In my opinion, there are two solutions.</p>
+
+<ol>
+  <li>When you allocate memory resource, reuse it.</li>
+  <li>And make the garbage collector run faster.</li>
+</ol>
+
+<p>The first solution is using the StringBuffer, StringBuilder class.<br />
+These classes using the char array allocate String data.</p>
+
+<p>Fortunately, some replacer function codes are in the github<br /> 
+and we can get by google’s search engine results.</p>
+
+<p>But, there are still issue.</p>
 
 <ul>
-<li>reuse memory resources.</li>
-<li>I want GC to be a more faster/</li>
+  <li>Does this function is using the StringBuffer, StringBuilder classes,<br />
+ and regular expression?</li>
 </ul>
+
+<p>Many open source codes did not satisfy the conditions.<br />
+But, solution was close.</p>
+
+<p>The appendReplacement method of java matcher class is satisfy the conditions.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="n">Matcher</span> <span class="nf">appendReplacement</span><span class="o">(</span><span class="n">StringBuffer</span> <span class="n">sb</span><span class="o">,</span> <span class="n">String</span> <span class="n">replacement</span><span class="o">)</span> <span class="o">{</span>
+    <span class="o">...</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<p>Because the source code is too long, I can’t paste it.<br /> 
+So, chek the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/regex/Matcher.html#appendReplacement-java.lang.StringBuffer-java.lang.String-">api document link</a> instead of the code.</p>
 
    </div>
   </article>

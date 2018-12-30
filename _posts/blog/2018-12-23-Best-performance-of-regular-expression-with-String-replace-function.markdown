@@ -1,7 +1,7 @@
 ---
 layout: post
 published: true
-title: "Best performance of regular expression on String replace function."
+title: "Best performance of regular expression with String replace function."
 date: 2018-12-23 08:26:28 -0400
 categories: [blog]
 tags: [java, regular, expression, string, replace]
@@ -50,21 +50,47 @@ The string objects will be cleaned by the garbage collector. <br>
 (Somebody told me, God only knows when garbage collector executed.)
 
 We will see the graph as below.
-![image](https://user-images.githubusercontent.com/4101636/50532906-a934fa00-0b63-11e9-9668-196000d60862.png)
+![image](https://user-images.githubusercontent.com/4101636/50532906-a934fa00-0b63-11e9-9668-196000d60862.png){: width="100%"}
+
 
 This is ordinary graph of garbage collector.
 
-But, Live data is too big. <br>
+But, live data is too big. <br>
 It seems to be over 3~4G roughly.
 
 Check memory usage by profiler.
-![image](https://user-images.githubusercontent.com/4101636/50547521-1dfc5700-0c7e-11e9-9657-c2e4c0a4fddc.png)
+![image](https://user-images.githubusercontent.com/4101636/50547521-1dfc5700-0c7e-11e9-9657-c2e4c0a4fddc.png){: width="100%" }
 
-Array of char and byte occupy a large part of memory.
 
-Then, What is the solution?
+Arrays of char and byte occupy a large part of memory.
 
-I think there is 2 kind of solutions.
+Then, what is the solution?
 
- - reuse memory resources.
- - I want GC to be a more faster/
+In my opinion, there are two solutions.
+
+ 1. When you allocate memory resource, reuse it.
+ 2. And make the garbage collector run faster.
+ 
+The first solution is using the StringBuffer, StringBuilder class.<br>
+These classes using the char array allocate String data.
+
+Fortunately, some replacer function codes are in the github<br> 
+and we can get by google's search engine results. 
+
+But, there are still issue.
+
+ - Does this function is using the StringBuffer, StringBuilder classes,<br>
+ and regular expression?
+
+Many open source codes did not satisfy the conditions.<br>
+But, solution was close.
+
+The appendReplacement method of java matcher class is satisfy the conditions.
+
+```java
+public Matcher appendReplacement(StringBuffer sb, String replacement) {
+    ...
+}
+```
+Because the source code is too long, I can't paste it.<br> 
+So, chek the [api document link](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Matcher.html#appendReplacement-java.lang.StringBuffer-java.lang.String-) instead of the code.

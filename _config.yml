@@ -1,4 +1,4 @@
 name: Kellin's daily life...
-markdown: redcarpet
+markdown: kramdown
 future: true
 exclude: ["node_modules", "gulpfile.js", "package.json"]

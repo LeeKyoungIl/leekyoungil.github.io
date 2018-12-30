@@ -3,8 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="4caa5abb-48e9-4358-92b5-9fe58c5edbaf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/blog/2018-12-23-Best-performance-of-regular-expression-on-String-replace-function.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/blog/2018-12-23-Best-performance-of-regular-expression-on-String-replace-function.markdown" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/blog/2018/12/23/Best-performance-of-regular-expression-on-String-replace-function.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/blog/2018/12/23/Best-performance-of-regular-expression-on-String-replace-function.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/blog/2018-12-23-Best-performance-of-regular-expression-on-String-replace-function.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/blog/2018-12-23-Best-performance-of-regular-expression-with-String-replace-function.markdown" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/blog/2018/12/23/Best-performance-of-regular-expression-on-String-replace-function.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/posts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/posts/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -77,11 +80,11 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/_posts/blog/2018-12-23-Best-performance-of-regular-expression-on-String-replace-function.markdown">
+        <entry file="file://$PROJECT_DIR$/_posts/blog/2018-12-23-Best-performance-of-regular-expression-with-String-replace-function.markdown">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="810">
-                <caret line="69" column="2" lean-forward="true" selection-start-line="69" selection-start-column="2" selection-end-line="69" selection-end-column="33" />
+              <first_editor relative-caret-position="593">
+                <caret line="82" column="24" lean-forward="true" selection-start-line="82" selection-start-column="24" selection-end-line="82" selection-end-column="24" />
               </first_editor>
               <second_editor />
             </state>
@@ -89,12 +92,16 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_layouts/home.html">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/_config.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_includes/posts.html">
+        <entry file="file://$PROJECT_DIR$/_layouts/home.html">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
@@ -146,12 +153,13 @@
         <option value="$PROJECT_DIR$/_includes/contact.html" />
         <option value="$PROJECT_DIR$/_includes/message.html" />
         <option value="$PROJECT_DIR$/_jadefiles/message.jade" />
-        <option value="$PROJECT_DIR$/_config.yml" />
         <option value="$PROJECT_DIR$/_includes/header.html" />
         <option value="$PROJECT_DIR$/_includes/header_small.html" />
         <option value="$PROJECT_DIR$/_layouts/default.html" />
         <option value="$PROJECT_DIR$/assets/css/main.css" />
+        <option value="$PROJECT_DIR$/_config.yml" />
         <option value="$PROJECT_DIR$/_posts/blog/2018-12-23-Best-performance-of-regular-expression-on-String-replace-function.markdown" />
+        <option value="$PROJECT_DIR$/_posts/blog/2018-12-23-Best-performance-of-regular-expression-with-String-replace-function.markdown" />
       </list>
     </option>
   </component>
@@ -248,12 +256,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1546139745689</updated>
-      <workItem from="1546139747790" duration="12063000" />
+      <workItem from="1546139747790" duration="16993000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12063000" />
+    <option name="totallyTimeSpent" value="16993000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
@@ -478,13 +486,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_jadefiles/footer_small.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -546,11 +547,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/blog/2018-12-23-Best-performance-of-regular-expression-on-String-replace-function.markdown">
+    <entry file="file://$PROJECT_DIR$/_config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/blog/2018-12-23-Best-performance-of-regular-expression-with-String-replace-function.markdown">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="810">
-            <caret line="69" column="2" lean-forward="true" selection-start-line="69" selection-start-column="2" selection-end-line="69" selection-end-column="33" />
+          <first_editor relative-caret-position="593">
+            <caret line="82" column="24" lean-forward="true" selection-start-line="82" selection-start-column="24" selection-end-line="82" selection-end-column="24" />
           </first_editor>
           <second_editor />
         </state>
