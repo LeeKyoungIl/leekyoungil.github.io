@@ -2,32 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4caa5abb-48e9-4358-92b5-9fe58c5edbaf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_includes/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/_includes/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_includes/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/_includes/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_includes/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/_includes/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_includes/header_small.html" beforeDir="false" afterPath="$PROJECT_DIR$/_includes/header_small.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_includes/message.html" beforeDir="false" afterPath="$PROJECT_DIR$/_includes/message.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_jadefiles/contact.jade" beforeDir="false" afterPath="$PROJECT_DIR$/_jadefiles/contact.jade" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_jadefiles/footer.jade" beforeDir="false" afterPath="$PROJECT_DIR$/_jadefiles/footer.jade" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_jadefiles/footer_small.jade" beforeDir="false" afterPath="$PROJECT_DIR$/_jadefiles/footer_small.jade" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_jadefiles/header.jade" beforeDir="false" afterPath="$PROJECT_DIR$/_jadefiles/header.jade" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_jadefiles/message.jade" beforeDir="false" afterPath="$PROJECT_DIR$/_jadefiles/message.jade" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_layouts/default.html" beforeDir="false" afterPath="$PROJECT_DIR$/_layouts/default.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_posts/blog/2018-12-23-Best-performance-of-regular-expression-on-String-replace-function.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/blog/2018-12-23-Best-performance-of-regular-expression-on-String-replace-function.markdown" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/_posts/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/_site/assets/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/assets/img/face.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/java/2018/12/23/Best-performance-of-regular-expression-on-String-replace-function.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/3-sections/_about.sass" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/3-sections/_about.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/3-sections/_footer.sass" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/3-sections/_footer.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/3-sections/_header.sass" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/3-sections/_header.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/3-sections/_headersmall.sass" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/3-sections/_headersmall.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/face.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts.md" beforeDir="false" afterPath="$PROJECT_DIR$/posts.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -67,7 +42,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="361">
@@ -99,12 +74,12 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_posts/blog/2018-12-23-Best-performance-of-regular-expression-on-String-replace-function.markdown">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="45">
-                <caret line="3" column="50" lean-forward="true" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
+              <first_editor relative-caret-position="645">
+                <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
               </first_editor>
               <second_editor />
             </state>
@@ -137,9 +112,9 @@
       <find>GOC</find>
       <find>android</find>
       <find>example@gmail.com</find>
-      <find>code</find>
       <find>highlight</find>
       <find>language-java</find>
+      <find>code</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/_site/java</dir>
@@ -173,8 +148,8 @@
         <option value="$PROJECT_DIR$/_includes/header.html" />
         <option value="$PROJECT_DIR$/_includes/header_small.html" />
         <option value="$PROJECT_DIR$/_layouts/default.html" />
-        <option value="$PROJECT_DIR$/_posts/blog/2018-12-23-Best-performance-of-regular-expression-on-String-replace-function.markdown" />
         <option value="$PROJECT_DIR$/assets/css/main.css" />
+        <option value="$PROJECT_DIR$/_posts/blog/2018-12-23-Best-performance-of-regular-expression-on-String-replace-function.markdown" />
       </list>
     </option>
   </component>
@@ -271,12 +246,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1546139745689</updated>
-      <workItem from="1546139747790" duration="7216000" />
+      <workItem from="1546139747790" duration="7384000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7216000" />
+    <option name="totallyTimeSpent" value="7384000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
@@ -555,16 +530,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/blog/2018-12-23-Best-performance-of-regular-expression-on-String-replace-function.markdown">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="45">
-            <caret line="3" column="50" lean-forward="true" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_layouts/default.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -576,6 +541,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
           <caret line="189" column="17" selection-start-line="189" selection-start-column="17" selection-end-line="189" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/blog/2018-12-23-Best-performance-of-regular-expression-on-String-replace-function.markdown">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="645">
+            <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

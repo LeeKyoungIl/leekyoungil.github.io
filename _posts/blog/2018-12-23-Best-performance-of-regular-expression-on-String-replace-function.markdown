@@ -41,6 +41,7 @@ for (Map.Entry<String, String> replaceEntry : dictionaryMap.entrySet()) {
 ```
 
 At this time, what will happens in the heap memory?
+
 May be, more then 1,000 Immutable string objects will be created in the heap memory.
 
 In fact, it's not a big deal.
