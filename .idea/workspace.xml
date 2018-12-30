@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4caa5abb-48e9-4358-92b5-9fe58c5edbaf" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_posts/blog/2018-12-23-Best-performance-of-regular-expression-on-String-replace-function.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/blog/2018-12-23-Best-performance-of-regular-expression-on-String-replace-function.markdown" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_site/blog/2018/12/23/Best-performance-of-regular-expression-on-String-replace-function.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/blog/2018/12/23/Best-performance-of-regular-expression-on-String-replace-function.html" afterDir="false" />
     </list>
@@ -79,8 +80,8 @@
         <entry file="file://$PROJECT_DIR$/_posts/blog/2018-12-23-Best-performance-of-regular-expression-on-String-replace-function.markdown">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="570">
-                <caret line="38" column="7" lean-forward="true" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
+              <first_editor relative-caret-position="810">
+                <caret line="69" column="2" lean-forward="true" selection-start-line="69" selection-start-column="2" selection-end-line="69" selection-end-column="33" />
               </first_editor>
               <second_editor />
             </state>
@@ -247,12 +248,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1546139745689</updated>
-      <workItem from="1546139747790" duration="7456000" />
+      <workItem from="1546139747790" duration="12063000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7456000" />
+    <option name="totallyTimeSpent" value="12063000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
@@ -261,7 +262,7 @@
       <window_info id="npm" side_tool="true" />
       <window_info id="Gulp" side_tool="true" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20735383" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18324292" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" />
@@ -548,8 +549,8 @@
     <entry file="file://$PROJECT_DIR$/_posts/blog/2018-12-23-Best-performance-of-regular-expression-on-String-replace-function.markdown">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="570">
-            <caret line="38" column="7" lean-forward="true" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
+          <first_editor relative-caret-position="810">
+            <caret line="69" column="2" lean-forward="true" selection-start-line="69" selection-start-column="2" selection-end-line="69" selection-end-column="33" />
           </first_editor>
           <second_editor />
         </state>
