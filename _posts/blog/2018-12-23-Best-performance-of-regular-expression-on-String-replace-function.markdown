@@ -46,7 +46,7 @@ May be, more then 1,000 Immutable string objects will be created in the heap mem
 
 In fact, it's not a big deal.
 
-The string objects will be cleaned by the garbage collector. 
+The string objects will be cleaned by the garbage collector. <br>
 (Somebody talked me, god only knows, when garbage collector will be executed.)
 
 We can almost see these graphs.
