@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Kellin's daily life...</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link href="/kudos.css" media="screen" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+
+
+  <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script src="/assets/js/functions.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/modernizr.js"></script>
+<script src="/assets/js/kudos.js"></script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-70467029-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+<a href="#" class="back-to-top">Back To Top</a><div id="container" class="logo"></div><header id="h_small"><nav id="nav_small"><a href="/#about-me">About Me</a><a href="/#Experenice">Experience</a><a href="/#Blog">Blog</a><a href="/#Details">Contact Me</a></nav></header>
+
+
+<script type="text/javascript">
+			// needs to be a string for jquery.cookie
+			var postId = '1';
+			$(function()
+			{
+				// initialize kudos
+				$("figure.kudoable").kudoable();
+				// check to see if user has already kudod
+				// fyi cookies do not work when you are viewing this as a file
+				if($.cookie(postId) == 'true') {
+					// make kudo already kudod
+					$("figure.kudoable").removeClass("animate").addClass("complete");
+					// your server would take care of the proper kudos count, but because this is a
+					// static page, we need to set it here so it doesn't become -1 when you remove
+					// the kudos after a reload
+					$(".num").html(1);
+				}
+				// when kudoing
+				$("figure.kudo").bind("kudo:active", function(e)
+				{
+					console.log("kudoing active");
+				});
+				// when not kudoing
+				$("figure.kudo").bind("kudo:inactive", function(e)
+				{
+					console.log("kudoing inactive");
+				});
+				// after kudo'd
+				$("figure.kudo").bind("kudo:added", function(e)
+				{
+					var element = $(this);
+					// ajax'y stuff or whatever you want
+					console.log("Kodo'd:", element.data('id'), ":)");
+					// set cookie so user cannot kudo again for 7 days
+					$.cookie(postId, 'true', { expires: 7 });
+				});
+				// after removing a kudo
+				$("figure.kudo").bind("kudo:removed", function(e)
+				{
+					var element = $(this);
+					// ajax'y stuff or whatever you want
+					console.log("Un-Kudo'd:", element.data('id'), ":(");
+					// remove cookie
+					$.removeCookie(postId);
+				});
+			});
+		</script>
+
+
+
+<div class="post-header">
+  <h1 class="post-title">Best performance of regular expression on String replace function.</h1>
+</div>
+<div class="post-header">
+  <p class="post-meta">December 23, 2018 — 21:26</p>
+</div>
+
+<div class="post-wrapper">
+
+
+
+  <article class="post-content">
+    <div class = "blurb-blog">
+    <p>I&#39;ve been working on process of a really big String replace on the Java recently.</p>
+
+<p>Working flow is simple. </p>
+
+<p>When text input to my code, regular expression works at least 1,X00 times.
+Namely, strings are created in the Heap memory so much.</p>
+
+<p>Sometimes, this situation gives strain on the system memory resource. 
+Because, the text string is a little large and more than 1,X00 similar text data are generated on memory.</p>
+
+<p>Let&#39;s looking the code.</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">replaceAll</span> <span class="o">(</span><span class="n">Pattern</span> <span class="n">pattern</span><span class="o">,</span> <span class="n">String</span> <span class="n">txt</span><span class="o">,</span> <span class="n">String</span> <span class="n">replacement</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">return</span> <span class="n">pattern</span><span class="o">.</span><span class="na">matcher</span><span class="o">(</span><span class="n">txt</span><span class="o">).</span><span class="na">replaceAll</span><span class="o">(</span><span class="n">replacement</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>Nothing to special?</p>
+
+<p>But, this code runs 1,x00 per user request.</p>
+
+<p>For example.</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">String</span> <span class="n">resultString</span> <span class="o">=</span> <span class="s">"Test String. (this string is more then 5kb.)"</span><span class="o">;</span>
+<span class="k">for</span> <span class="o">(</span><span class="n">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">replaceEntry</span> <span class="o">:</span> <span class="n">dictionaryMap</span><span class="o">.</span><span class="na">entrySet</span><span class="o">())</span> <span class="o">{</span>
+    <span class="o">...</span>
+    <span class="n">resultString</span> <span class="o">=</span> <span class="n">replaceAll</span><span class="o">(</span><span class="n">regexPattern</span><span class="o">,</span> <span class="n">resultString</span><span class="o">,</span> <span class="n">replaceValue</span><span class="o">);</span>
+    <span class="o">...</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>At this time, what will happens in the heap memory?
+May be, more then 1,000 Immutable string objects will be created in the heap memory.</p>
+
+<p>In fact, it&#39;s not a big deal.</p>
+
+<p>The string objects will be cleaned by the garbage collector. 
+(Somebody talked me, god only knows, when garbage collector will be executed.)</p>
+
+<p>We can almost see these graphs.
+<img src="https://user-images.githubusercontent.com/4101636/50532906-a934fa00-0b63-11e9-9668-196000d60862.png" alt="image"></p>
+
+<p>It&#39;s ordinary graph of garbage collector.</p>
+
+   </div>
+  </article>
+
+
+</div>
+<div class="comment">
+  
+  </div>
+
+  <footer><div class="lockup"><div class="content-wrap"><nav><a href="#about-me">About Me</a><a href="#Experenice">Experience</a><a href="#Blog">Blog</a><a href="#Details">Contact Me</a></nav><p class="copyright">kellin 2018</p></div></div></footer>
+  </body>
+</html>

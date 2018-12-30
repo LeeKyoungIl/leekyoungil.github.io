@@ -186,6 +186,8 @@ code,
 kbd,
 pre,
 samp {
+  background-color: #2E2D33;
+  color: #aaaaaa;
   font-family: monospace, monospace;
   font-size: 1em; }
 
@@ -598,7 +600,7 @@ h2, header nav a, header .kicker, footer .lockup a, #h_small #nav_small a, #h_sm
   .logo {
     height: 70px;
     width: 70px;
-    background: url(../img/GOC1.png) center center;
+    background: url(../img/kellin_logo.png) center center;
     background-size: 70px 47px;
     background-repeat: no-repeat;
     position: fixed;
@@ -628,7 +630,7 @@ h2, header nav a, header .kicker, footer .lockup a, #h_small #nav_small a, #h_sm
   .logo {
     height: 90px;
     width: 90px;
-    background: url(../img/GOC1.png) center center;
+    background: url(../img/kellin_logo.png) center center;
     width: 88px;
     height: 47px;
     background-size: 88px 47px;
@@ -637,7 +639,7 @@ h2, header nav a, header .kicker, footer .lockup a, #h_small #nav_small a, #h_sm
     margin: 30px 0 0 30px; } }
 
 header {
-  background: url(../img/galway2.jpg) center center;
+  background: url(../img/back1.jpg) center center;
   background-size: cover; }
   @media only screen and (min-width: 220px) {
     header {
@@ -665,7 +667,7 @@ header {
   header h1 {
     text-align: center;
     color: rgba(0, 0, 0, 0.5);
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     letter-spacing: 0.05cm;
     margin-bottom: 20px;
     clear: both; }
@@ -703,7 +705,7 @@ header {
     color: rgba(0, 0, 0, 0.5); }
 
 footer {
-  background: url(../img/galway3.jpg) center center;
+  background: url(../img/back2.jpg) center center;
   background-size: cover; }
   footer .lockup {
     padding: 50px 30px; }
@@ -738,12 +740,12 @@ footer {
       display: flex;
       margin: auto;
       border-radius: 60%;
-      background: url(../img/face.JPG) no-repeat; }
+      background: url(../img/face.png) no-repeat; }
     .about-lock .face1-img {
       height: 180px;
       width: 180px;
       border-radius: 50%;
-      background: url(../img/android.JPG);
+      background: url(../img/face1.png);
       margin: auto; }
     .about-lock .flip-container {
       -webkit-perspective: 1000;
@@ -1376,7 +1378,7 @@ form {
 
 #h_small {
   height: 170px;
-  background: url(../img/galway2.jpg) center center;
+  background: url(../img/back1.jpg) center center;
   background-size: cover; }
   #h_small #nav_small {
     float: right;
@@ -1392,7 +1394,7 @@ form {
     font-size: 72px;
     font-weight: 700;
     color: rgba(0, 0, 0, 0.5);
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     letter-spacing: 0.05cm; }
     #h_small #h1_small span {
       display: inline-block;

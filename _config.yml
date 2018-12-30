@@ -1,3 +1,4 @@
-name: Gearoid O'Connor
+name: Kellin's daily life...
 markdown: redcarpet
+future: true
 exclude: ["node_modules", "gulpfile.js", "package.json"]
