@@ -3,16 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="4caa5abb-48e9-4358-92b5-9fe58c5edbaf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_includes/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/_includes/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_includes/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/_includes/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_includes/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/_includes/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_includes/history.html" beforeDir="false" afterPath="$PROJECT_DIR$/_includes/history.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_jadefiles/about.jade" beforeDir="false" afterPath="$PROJECT_DIR$/_jadefiles/about.jade" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_jadefiles/contact.jade" beforeDir="false" afterPath="$PROJECT_DIR$/_jadefiles/contact.jade" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_jadefiles/header.jade" beforeDir="false" afterPath="$PROJECT_DIR$/_jadefiles/header.jade" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_jadefiles/history.jade" beforeDir="false" afterPath="$PROJECT_DIR$/_jadefiles/history.jade" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_posts/blog/2019-01-01-Best-performance-of-regular-expression-with-String-replace-function.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/blog/2019-01-01-Best-performance-of-regular-expression-with-String-replace-function.markdown" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_site/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/posts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/posts/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,19 +19,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_includes/header.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="8" lean-forward="true" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_jadefiles/header.jade">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
-              <caret line="3" column="5" lean-forward="true" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+              <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -47,7 +31,7 @@
         <entry file="file://$PROJECT_DIR$/_site/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="42" column="206" lean-forward="true" selection-start-line="42" selection-start-column="206" selection-end-line="42" selection-end-column="206" />
+              <caret line="51" column="206" selection-start-line="51" selection-start-column="206" selection-end-line="51" selection-end-column="206" />
             </state>
           </provider>
         </entry>
@@ -83,7 +67,7 @@
         <entry file="file://$PROJECT_DIR$/_jadefiles/contact.jade">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
-              <caret line="14" column="50" lean-forward="true" selection-start-line="13" selection-start-column="6" selection-end-line="14" selection-end-column="50" />
+              <caret line="14" column="50" selection-start-line="13" selection-start-column="6" selection-end-line="14" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -101,7 +85,7 @@
         <entry file="file://$PROJECT_DIR$/_includes/history.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
-              <caret line="1" column="209" lean-forward="true" selection-start-line="1" selection-start-column="209" selection-end-line="1" selection-end-column="209" />
+              <caret line="1" column="209" selection-start-line="1" selection-start-column="209" selection-end-line="1" selection-end-column="209" />
             </state>
           </provider>
         </entry>
@@ -110,8 +94,20 @@
         <entry file="file://$PROJECT_DIR$/_posts/blog/2019-01-01-Best-performance-of-regular-expression-with-String-replace-function.markdown">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="165">
-                <caret line="11" column="24" lean-forward="true" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+              <first_editor relative-caret-position="276">
+                <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_posts/blog/2019-01-03-How-to-regulate-the-TPS-on-Nginx.markdown">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="487">
+                <caret line="72" column="126" selection-start-line="72" selection-start-column="126" selection-end-line="72" selection-end-column="126" />
               </first_editor>
               <second_editor />
             </state>
@@ -122,14 +118,12 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>uppercase</find>
       <find>GOC</find>
       <find>android</find>
       <find>example@gmail.com</find>
       <find>highlight</find>
       <find>language-java</find>
       <find>code</find>
-      <find>SOFTWARE ENGINEER // DEVELOPER // DESIGNER</find>
       <find>2010-</find>
       <find>NUI Computer Science</find>
       <find>Graduate from university</find>
@@ -152,7 +146,12 @@
       <find>2010-2014</find>
       <find>messenger, portal</find>
       <find>PHP</find>
+      <find>nginx</find>
+      <find>SOFTWARE ENGINEER // DEVELOPER // DESIGNER</find>
     </findStrings>
+    <replaceStrings>
+      <replace>Nginx</replace>
+    </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/_site/java</dir>
     </dirStrings>
@@ -193,6 +192,7 @@
         <option value="$PROJECT_DIR$/_jadefiles/about.jade" />
         <option value="$PROJECT_DIR$/_jadefiles/contact.jade" />
         <option value="$PROJECT_DIR$/_includes/contact.html" />
+        <option value="$PROJECT_DIR$/_posts/blog/2019-01-03-How-to-regulate-the-TPS-on-Nginx.markdown" />
         <option value="$PROJECT_DIR$/_posts/blog/2019-01-01-Best-performance-of-regular-expression-with-String-replace-function.markdown" />
       </list>
     </option>
@@ -265,6 +265,7 @@
       <recent name="$PROJECT_DIR$/_posts" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/_posts/blog" />
       <recent name="$PROJECT_DIR$/assets/img" />
     </key>
   </component>
@@ -290,12 +291,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1546139745689</updated>
-      <workItem from="1546139747790" duration="32433000" />
+      <workItem from="1546139747790" duration="42860000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32433000" />
+    <option name="totallyTimeSpent" value="42860000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
@@ -326,16 +327,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/posts.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="45">
-            <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_site/java/2018/12/23/Best-performance-of-regular-expression-on-String-replace-function.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -538,21 +529,21 @@
     <entry file="file://$PROJECT_DIR$/_includes/header.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="6" column="8" lean-forward="true" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_jadefiles/header.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
-          <caret line="3" column="5" lean-forward="true" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+          <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_site/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="42" column="206" lean-forward="true" selection-start-line="42" selection-start-column="206" selection-end-line="42" selection-end-column="206" />
+          <caret line="51" column="206" selection-start-line="51" selection-start-column="206" selection-end-line="51" selection-end-column="206" />
         </state>
       </provider>
     </entry>
@@ -566,7 +557,7 @@
     <entry file="file://$PROJECT_DIR$/_includes/history.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
-          <caret line="1" column="209" lean-forward="true" selection-start-line="1" selection-start-column="209" selection-end-line="1" selection-end-column="209" />
+          <caret line="1" column="209" selection-start-line="1" selection-start-column="209" selection-end-line="1" selection-end-column="209" />
         </state>
       </provider>
     </entry>
@@ -587,7 +578,7 @@
     <entry file="file://$PROJECT_DIR$/_jadefiles/contact.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="14" column="50" lean-forward="true" selection-start-line="13" selection-start-column="6" selection-end-line="14" selection-end-column="50" />
+          <caret line="14" column="50" selection-start-line="13" selection-start-column="6" selection-end-line="14" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -598,11 +589,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/blog/2019-01-03-How-to-regulate-the-TPS-on-Nginx.markdown">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="487">
+            <caret line="72" column="126" selection-start-line="72" selection-start-column="126" selection-end-line="72" selection-end-column="126" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/_posts/blog/2019-01-01-Best-performance-of-regular-expression-with-String-replace-function.markdown">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="165">
-            <caret line="11" column="24" lean-forward="true" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+          <first_editor relative-caret-position="276">
+            <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
           </first_editor>
           <second_editor />
         </state>

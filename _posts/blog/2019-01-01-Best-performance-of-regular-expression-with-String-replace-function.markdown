@@ -17,7 +17,7 @@ Namely, strings are created in the Heap memory so much.
 Sometimes, this situation gives strain on the system memory resource. 
 Because, the text string is a little large and more than 1,000 similar text data are generated on memory.
 
-Let's looking the code.
+Let's look the code.
 
 ```java
 public static String replaceAll (Pattern pattern, String txt, String replacement) {

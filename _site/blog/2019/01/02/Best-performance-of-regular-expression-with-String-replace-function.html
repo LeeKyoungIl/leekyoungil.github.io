@@ -104,7 +104,7 @@ Namely, strings are created in the Heap memory so much.</p>
 <p>Sometimes, this situation gives strain on the system memory resource. 
 Because, the text string is a little large and more than 1,000 similar text data are generated on memory.</p>
 
-<p>Let’s looking the code.</p>
+<p>Let’s look the code.</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">replaceAll</span> <span class="o">(</span><span class="n">Pattern</span> <span class="n">pattern</span><span class="o">,</span> <span class="n">String</span> <span class="n">txt</span><span class="o">,</span> <span class="n">String</span> <span class="n">replacement</span><span class="o">)</span> <span class="o">{</span>
   <span class="k">return</span> <span class="n">pattern</span><span class="o">.</span><span class="na">matcher</span><span class="o">(</span><span class="n">txt</span><span class="o">).</span><span class="na">replaceAll</span><span class="o">(</span><span class="n">replacement</span><span class="o">);</span>
