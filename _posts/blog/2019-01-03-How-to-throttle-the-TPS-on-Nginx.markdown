@@ -1,7 +1,7 @@
 ---
 layout: post
 published: true
-title: "How to regulate the tps on the Nginx."
+title: "How to throttle the tps on the Nginx."
 date: 2019-01-03 20:31:30 -0400
 categories: [blog]
 tags: [Nginx, tps, throttle, module]
@@ -9,8 +9,8 @@ tags: [Nginx, tps, throttle, module]
 
 Sometimes, we have to limit the application request, it's called the TPS throttling.
 
-If we use the application with the spring boot, we can't regulate the TPS.<br>
-However, if we use the Nginx which is located in front of the spring boot application and is named the reverse proxy, the Nginx can regulate the TPS.
+If we use the application with the spring boot, we can't throttle the TPS.<br>
+However, if we use the Nginx which is located in front of the spring boot application and is named the reverse proxy, the Nginx can throttle the TPS.
 
 There is a module of the limit_req_zone on the Nginx, generally, it is used to protect a web server from the DDOS.
 
@@ -56,7 +56,7 @@ This $binary_remote_addr is built-in variable of the Nginx, it has client ip add
 
 So, change the code to the $request_uri, it is also built-in variable of the Nginx, it has the uri of client request.
 
-So, we can regulate client request per the uri.
+So, we can throttle client request per the uri.
 
 If the same uri requested is over a limit, the Nginx will be return to client the 503 http status.
 

@@ -82,7 +82,7 @@
 
 
 <div class="post-header">
-  <h1 class="post-title">How to regulate the tps on the Nginx.</h1>
+  <h1 class="post-title">How to throttle the tps on the Nginx.</h1>
 </div>
 <div class="post-header">
   <p class="post-meta">January 4, 2019 — 09:31</p>
@@ -96,8 +96,8 @@
     <div class = "blurb-blog">
     <p>Sometimes, we have to limit the application request, it’s called the TPS throttling.</p>
 
-<p>If we use the application with the spring boot, we can’t regulate the TPS.<br />
-However, if we use the Nginx which is located in front of the spring boot application and is named the reverse proxy, the Nginx can regulate the TPS.</p>
+<p>If we use the application with the spring boot, we can’t throttle the TPS.<br />
+However, if we use the Nginx which is located in front of the spring boot application and is named the reverse proxy, the Nginx can throttle the TPS.</p>
 
 <p>There is a module of the limit_req_zone on the Nginx, generally, it is used to protect a web server from the DDOS.</p>
 
@@ -140,7 +140,7 @@ It is meaning of make 10 queues, when server is over a limit of client request.<
 
 <p>So, change the code to the $request_uri, it is also built-in variable of the Nginx, it has the uri of client request.</p>
 
-<p>So, we can regulate client request per the uri.</p>
+<p>So, we can throttle client request per the uri.</p>
 
 <p>If the same uri requested is over a limit, the Nginx will be return to client the 503 http status.</p>
 

@@ -4,6 +4,9 @@
     <list default="true" id="4caa5abb-48e9-4358-92b5-9fe58c5edbaf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_posts/blog/2019-01-01-Best-performance-of-regular-expression-with-String-replace-function.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/blog/2019-01-01-Best-performance-of-regular-expression-with-String-replace-function.markdown" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/blog/2019-01-03-How-to-regulate-the-TPS-on-Nginx.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/blog/2019-01-03-How-to-throttle-the-TPS-on-Nginx.markdown" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/blog/2019/01/02/Best-performance-of-regular-expression-with-String-replace-function.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/blog/2019/01/02/Best-performance-of-regular-expression-with-String-replace-function.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/blog/2019/01/04/How-to-regulate-the-TPS-on-Nginx.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/_site/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_site/posts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/posts/index.html" afterDir="false" />
     </list>
@@ -90,24 +93,24 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_posts/blog/2019-01-01-Best-performance-of-regular-expression-with-String-replace-function.markdown">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="276">
-                <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+              <first_editor relative-caret-position="183">
+                <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
               </first_editor>
               <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_posts/blog/2019-01-03-How-to-regulate-the-TPS-on-Nginx.markdown">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_posts/blog/2019-01-03-How-to-throttle-the-TPS-on-Nginx.markdown">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="487">
-                <caret line="72" column="126" selection-start-line="72" selection-start-column="126" selection-end-line="72" selection-end-column="126" />
+              <first_editor relative-caret-position="210">
+                <caret line="14" column="46" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
               </first_editor>
               <second_editor />
             </state>
@@ -118,8 +121,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>GOC</find>
-      <find>android</find>
       <find>example@gmail.com</find>
       <find>highlight</find>
       <find>language-java</find>
@@ -148,6 +149,8 @@
       <find>PHP</find>
       <find>nginx</find>
       <find>SOFTWARE ENGINEER // DEVELOPER // DESIGNER</find>
+      <find>what will be happened i</find>
+      <find>regulate</find>
     </findStrings>
     <replaceStrings>
       <replace>Nginx</replace>
@@ -192,8 +195,8 @@
         <option value="$PROJECT_DIR$/_jadefiles/about.jade" />
         <option value="$PROJECT_DIR$/_jadefiles/contact.jade" />
         <option value="$PROJECT_DIR$/_includes/contact.html" />
-        <option value="$PROJECT_DIR$/_posts/blog/2019-01-03-How-to-regulate-the-TPS-on-Nginx.markdown" />
         <option value="$PROJECT_DIR$/_posts/blog/2019-01-01-Best-performance-of-regular-expression-with-String-replace-function.markdown" />
+        <option value="$PROJECT_DIR$/_posts/blog/2019-01-03-How-to-regulate-the-TPS-on-Nginx.markdown" />
       </list>
     </option>
   </component>
@@ -217,21 +220,6 @@
             <path>
               <item name="git_blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="git_blog" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="git_blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="git_blog" type="462c0819:PsiDirectoryNode" />
-              <item name="_includes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="git_blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="git_blog" type="462c0819:PsiDirectoryNode" />
-              <item name="_jadefiles" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="git_blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="git_blog" type="462c0819:PsiDirectoryNode" />
-              <item name="_layouts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="git_blog" type="b2602c69:ProjectViewProjectNode" />
@@ -291,12 +279,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1546139745689</updated>
-      <workItem from="1546139747790" duration="42860000" />
+      <workItem from="1546139747790" duration="46047000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42860000" />
+    <option name="totallyTimeSpent" value="46047000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
@@ -589,21 +577,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/blog/2019-01-03-How-to-regulate-the-TPS-on-Nginx.markdown">
+    <entry file="file://$PROJECT_DIR$/_posts/blog/2019-01-01-Best-performance-of-regular-expression-with-String-replace-function.markdown">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="487">
-            <caret line="72" column="126" selection-start-line="72" selection-start-column="126" selection-end-line="72" selection-end-column="126" />
+          <first_editor relative-caret-position="183">
+            <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/blog/2019-01-01-Best-performance-of-regular-expression-with-String-replace-function.markdown">
+    <entry file="file://$PROJECT_DIR$/_posts/blog/2019-01-03-How-to-throttle-the-TPS-on-Nginx.markdown">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="276">
-            <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+          <first_editor relative-caret-position="210">
+            <caret line="14" column="46" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
           </first_editor>
           <second_editor />
         </state>
