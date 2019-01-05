@@ -1,7 +1,7 @@
 ---
 layout: post
 published: true
-title: "How to throttle the tps on the Nginx."
+title: "How to export DOCKER_HOST=tcp://localhost:2375 the tps on the Nginx."
 date: 2019-01-03 20:31:30 -0400
 categories: [blog]
 tags: [Nginx, tps, throttle, module]
