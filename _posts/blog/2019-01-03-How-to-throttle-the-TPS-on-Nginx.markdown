@@ -39,10 +39,10 @@ server {
 
 In this way, it can use the my_zone configuration to apply spring-boot-application.
 
-There is one more thing, you should also check that the Burst keyword.<br> 
-It is meaning of make 10 queues, when server is over a limit of client request.
+There is one more thing, you should also check the Burst keyword.<br> 
+It means making 10 queues, when server is over limit of client request.
 
-But, this configuration is not result I want.
+But, this configuration is not the result I want.
 
 What's the problem?
 
@@ -54,15 +54,16 @@ limit_req_zone $binary_remote_addr zone=my_zone:10m rate=30r/s;
 
 This $binary_remote_addr is built-in variable of the Nginx, it has client ip address.
 
-So, change the code to the $request_uri, it is also built-in variable of the Nginx, it has the uri of client request.
+So, change the code to the $request_uri which is also built-in variable of the Nginx, changed code has the URI of client request.
 
-So, we can throttle client request per the uri.
+So, we can throttle client request per the URI.
 
-If the same uri requested is over a limit, the Nginx will be return to client the 503 http status.
+If the same URI requested is over limit, the Nginx will be return to client the 503 http status.
 
-If the another the Nginx is placed in front of role of the Proxy-Nginx, when the Proxy-Nginx is to return the 503 status, the request of client redirect to another the Proxy_Nginx by front the Nginx.
+If the other Nginx is placed in front of the Proxy-Nginx, the Proxy-Nginx is to return the 503 status.<br>
+At this time, the request of client redirect to the another Proxy_Nginx by the front Nginx.
 
-And finally, I will explain by system configuration map.
+And finally, I will explain overall by using system configuration map.
 
 ![image](https://user-images.githubusercontent.com/4101636/50675336-d5072280-1030-11e9-8179-65086f04e9ad.png){: width="100%" }
 

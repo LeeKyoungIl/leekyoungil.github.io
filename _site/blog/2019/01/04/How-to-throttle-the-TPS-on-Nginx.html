@@ -82,7 +82,7 @@
 
 
 <div class="post-header">
-  <h1 class="post-title">How to export DOCKER_HOST=tcp://localhost:2375 the tps on the Nginx.</h1>
+  <h1 class="post-title">How to throttle the TPS on Nginx.</h1>
 </div>
 <div class="post-header">
   <p class="post-meta">January 4, 2019 — 09:31</p>
@@ -124,10 +124,10 @@ However, if we use the Nginx which is located in front of the spring boot applic
 
 <p>In this way, it can use the my_zone configuration to apply spring-boot-application.</p>
 
-<p>There is one more thing, you should also check that the Burst keyword.<br /> 
-It is meaning of make 10 queues, when server is over a limit of client request.</p>
+<p>There is one more thing, you should also check the Burst keyword.<br /> 
+It means making 10 queues, when server is over limit of client request.</p>
 
-<p>But, this configuration is not result I want.</p>
+<p>But, this configuration is not the result I want.</p>
 
 <p>What’s the problem?</p>
 
@@ -138,15 +138,16 @@ It is meaning of make 10 queues, when server is over a limit of client request.<
 
 <p>This $binary_remote_addr is built-in variable of the Nginx, it has client ip address.</p>
 
-<p>So, change the code to the $request_uri, it is also built-in variable of the Nginx, it has the uri of client request.</p>
+<p>So, change the code to the $request_uri which is also built-in variable of the Nginx, changed code has the URI of client request.</p>
 
-<p>So, we can throttle client request per the uri.</p>
+<p>So, we can throttle client request per the URI.</p>
 
-<p>If the same uri requested is over a limit, the Nginx will be return to client the 503 http status.</p>
+<p>If the same URI requested is over limit, the Nginx will be return to client the 503 http status.</p>
 
-<p>If the another the Nginx is placed in front of role of the Proxy-Nginx, when the Proxy-Nginx is to return the 503 status, the request of client redirect to another the Proxy_Nginx by front the Nginx.</p>
+<p>If the other Nginx is placed in front of the Proxy-Nginx, the Proxy-Nginx is to return the 503 status.<br />
+At this time, the request of client redirect to the another Proxy_Nginx by the front Nginx.</p>
 
-<p>And finally, I will explain by system configuration map.</p>
+<p>And finally, I will explain overall by using system configuration map.</p>
 
 <p><img src="https://user-images.githubusercontent.com/4101636/50675336-d5072280-1030-11e9-8179-65086f04e9ad.png" alt="image" width="100%" /></p>
 
