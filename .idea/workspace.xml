@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4caa5abb-48e9-4358-92b5-9fe58c5edbaf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/_posts/blog/2019-01-03-How-to-throttle-the-TPS-on-Nginx.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/blog/2019-01-03-How-to-throttle-the-TPS-on-Nginx.markdown" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/blog/2019-01-05-When-the-Dockerfile-builds-to-image,-if-an-localhost:2375-connection-refused-on-the-mac-os.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/blog/2019-01-05-When-the-Dockerfile-builds-to-image,-if-an-localhost:2375-connection-refused-on-the-mac-os.markdown" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -90,7 +90,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_posts/blog/2019-01-03-How-to-throttle-the-TPS-on-Nginx.markdown">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
@@ -102,12 +102,12 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_posts/blog/2019-01-05-When-the-Dockerfile-builds-to-image,-if-an-localhost:2375-connection-refused-on-the-mac-os.markdown">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="1440">
-                <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
+              <first_editor relative-caret-position="29">
+                <caret line="3" column="124" selection-start-line="3" selection-start-column="124" selection-end-line="3" selection-end-column="124" />
               </first_editor>
               <second_editor />
             </state>
@@ -195,8 +195,8 @@
         <option value="$PROJECT_DIR$/_posts/blog/2019-01-01-Best-performance-of-regular-expression-with-String-replace-function.markdown" />
         <option value="$PROJECT_DIR$/_posts/blog/2019-01-03-How-to-regulate-the-TPS-on-Nginx.markdown" />
         <option value="$PROJECT_DIR$/_posts/blog/2019-01-05-When-the-Dockerfile-builds-to-image,-if-an-localhost:2375-connection-refused.markdown" />
-        <option value="$PROJECT_DIR$/_posts/blog/2019-01-05-When-the-Dockerfile-builds-to-image,-if-an-localhost:2375-connection-refused-on-the-mac-os.markdown" />
         <option value="$PROJECT_DIR$/_posts/blog/2019-01-03-How-to-throttle-the-TPS-on-Nginx.markdown" />
+        <option value="$PROJECT_DIR$/_posts/blog/2019-01-05-When-the-Dockerfile-builds-to-image,-if-an-localhost:2375-connection-refused-on-the-mac-os.markdown" />
       </list>
     </option>
   </component>
@@ -279,12 +279,12 @@
       <option name="presentableId" value="Default" />
       <updated>1546139745689</updated>
       <workItem from="1546139747790" duration="46709000" />
-      <workItem from="1546687400172" duration="6211000" />
+      <workItem from="1546687400172" duration="6607000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52920000" />
+    <option name="totallyTimeSpent" value="53316000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
@@ -572,21 +572,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/blog/2019-01-05-When-the-Dockerfile-builds-to-image,-if-an-localhost:2375-connection-refused-on-the-mac-os.markdown">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="1440">
-            <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_posts/blog/2019-01-03-How-to-throttle-the-TPS-on-Nginx.markdown">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="45">
             <caret line="3" column="35" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/blog/2019-01-05-When-the-Dockerfile-builds-to-image,-if-an-localhost:2375-connection-refused-on-the-mac-os.markdown">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="29">
+            <caret line="3" column="124" selection-start-line="3" selection-start-column="124" selection-end-line="3" selection-end-column="124" />
           </first_editor>
           <second_editor />
         </state>

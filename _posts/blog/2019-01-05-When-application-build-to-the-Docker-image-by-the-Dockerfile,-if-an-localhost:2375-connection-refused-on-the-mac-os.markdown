@@ -1,7 +1,7 @@
 ---
 layout: post
 published: true
-title: "When the Dockerfile builds to image, if an localhost:2375 connection refused on the Mac OS."
+title: "When application build to the Docker image by the Dockerfile, if an localhost:2375 connection refused on the Mac OS."
 date: 2019-01-05 20:35:30 -0400
 categories: [blog]
 tags: [dockerfile, maven, 2375, connection, refused]
