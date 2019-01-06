@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4caa5abb-48e9-4358-92b5-9fe58c5edbaf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/blog/2019-01-03-How-to-throttle-the-TPS-on-Nginx.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/blog/2019-01-03-How-to-throttle-the-TPS-on-Nginx.markdown" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/blog/2019/01/04/How-to-throttle-the-TPS-on-Nginx.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/blog/2019/01/04/How-to-throttle-the-TPS-on-Nginx.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/blog/2019/01/06/When-the-Dockerfile-builds-to-image,-if-an-localhost-2375-connection-refused-on-the-mac-os.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/blog/2019-01-05-When-application-build-to-the-Docker-image-by-the-Dockerfile,-if-an-localhost:2375-connection-refused-on-the-mac-os.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/blog/2019-01-05-When-application-build-to-the-Docker-image-by-the-Dockerfile,-if-an-localhost:2375-connection-refused-on-the-mac-os.markdown" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/blog/2019/01/06/When-application-build-to-the-Docker-image-by-the-Dockerfile,-if-an-localhost-2375-connection-refused-on-the-mac-os.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/blog/2019/01/06/When-application-build-to-the-Docker-image-by-the-Dockerfile,-if-an-localhost-2375-connection-refused-on-the-mac-os.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_site/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_site/posts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/posts/index.html" afterDir="false" />
     </list>
@@ -95,7 +94,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_posts/blog/2019-01-03-How-to-throttle-the-TPS-on-Nginx.markdown">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
@@ -107,12 +106,12 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_posts/blog/2019-01-05-When-application-build-to-the-Docker-image-by-the-Dockerfile,-if-an-localhost:2375-connection-refused-on-the-mac-os.markdown">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="-646">
-                <caret line="3" column="124" selection-start-line="3" selection-start-column="124" selection-end-line="3" selection-end-column="124" />
+              <first_editor relative-caret-position="264">
+                <caret line="47" column="4" selection-start-line="47" selection-start-column="4" selection-end-line="47" selection-end-column="4" />
               </first_editor>
               <second_editor />
             </state>
@@ -202,6 +201,7 @@
         <option value="$PROJECT_DIR$/_posts/blog/2019-01-05-When-the-Dockerfile-builds-to-image,-if-an-localhost:2375-connection-refused.markdown" />
         <option value="$PROJECT_DIR$/_posts/blog/2019-01-05-When-the-Dockerfile-builds-to-image,-if-an-localhost:2375-connection-refused-on-the-mac-os.markdown" />
         <option value="$PROJECT_DIR$/_posts/blog/2019-01-03-How-to-throttle-the-TPS-on-Nginx.markdown" />
+        <option value="$PROJECT_DIR$/_posts/blog/2019-01-05-When-application-build-to-the-Docker-image-by-the-Dockerfile,-if-an-localhost:2375-connection-refused-on-the-mac-os.markdown" />
       </list>
     </option>
   </component>
@@ -284,18 +284,18 @@
       <option name="presentableId" value="Default" />
       <updated>1546139745689</updated>
       <workItem from="1546139747790" duration="46709000" />
-      <workItem from="1546687400172" duration="7806000" />
+      <workItem from="1546687400172" duration="9092000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54515000" />
+    <option name="totallyTimeSpent" value="55801000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18324292" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18324292" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Gulp" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
@@ -310,7 +310,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32941177" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32941177" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -577,21 +577,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/blog/2019-01-05-When-application-build-to-the-Docker-image-by-the-Dockerfile,-if-an-localhost:2375-connection-refused-on-the-mac-os.markdown">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-646">
-            <caret line="3" column="124" selection-start-line="3" selection-start-column="124" selection-end-line="3" selection-end-column="124" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_posts/blog/2019-01-03-How-to-throttle-the-TPS-on-Nginx.markdown">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="367">
             <caret line="65" column="70" lean-forward="true" selection-start-line="65" selection-start-column="70" selection-end-line="65" selection-end-column="70" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/blog/2019-01-05-When-application-build-to-the-Docker-image-by-the-Dockerfile,-if-an-localhost:2375-connection-refused-on-the-mac-os.markdown">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="264">
+            <caret line="47" column="4" selection-start-line="47" selection-start-column="4" selection-end-line="47" selection-end-column="4" />
           </first_editor>
           <second_editor />
         </state>

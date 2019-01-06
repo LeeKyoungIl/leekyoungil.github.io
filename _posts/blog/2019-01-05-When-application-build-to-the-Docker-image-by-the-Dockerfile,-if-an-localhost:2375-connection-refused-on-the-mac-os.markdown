@@ -1,48 +1,51 @@
 ---
 layout: post
 published: true
-title: "When application build to the Docker image by the Dockerfile, if an localhost:2375 connection refused on the Mac OS."
+title: "When application build to the Docker image by the Dockerfile, it will be able to occur an localhost:2375 connection refused on the Mac OS."
 date: 2019-01-05 20:35:30 -0400
 categories: [blog]
 tags: [dockerfile, maven, 2375, connection, refused]
 ---
 
-When we make the Docker image by the Maven and Dockerfile, on the Spring project.
+When we make the Docker image by the Maven and Dockerfile on the Spring project, we take the **[docker-maven-plugin](https://github.com/spotify/docker-maven-plugin)** among the several plugins these make the Docker image.
 
-There are several plugins for making the Docker image, we can use the **[docker-maven-plugin](https://github.com/spotify/docker-maven-plugin)** of them.
+This story is about a occurred exception of connection refused, when I used the docker-maven-plugin.
 
-This story is about a occurred exception of connection refused, when I use the docker-maven-plugin.
-
-First, let's look at code of the pom.xml.
+Firstly, look at the code. (**pom.xml**)
 
 ```xml
-<plugin>
-    <groupId>com.spotify</groupId>
-    <artifactId>docker-maven-plugin</artifactId>
-    <version>0.4.9</version>
-    <configuration>
-        <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
-        <dockerDirectory>src/main/docker</dockerDirectory>
-        <resources>
-            <resource>
-                <targetPath>/</targetPath>
-                <directory>${project.build.directory}</directory>
-                <include>${project.build.finalName}.jar</include>
-            </resource>
-        </resources>
-    </configuration>
+<plugins>
+...
+    <plugin>
+        <groupId>com.spotify</groupId>
+        <artifactId>docker-maven-plugin</artifactId>
+        <version>0.4.9</version>
+        <configuration>
+            <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
+            <dockerDirectory>src/main/docker</dockerDirectory>
+            <resources>
+                <resource>
+                    <targetPath>/</targetPath>
+                    <directory>${project.build.directory}</directory>
+                    <include>${project.build.finalName}.jar</include>
+                </resource>
+            </resources>
+        </configuration>
     </plugin>
+...
+</plugins>
+
 ```
 
-I've added the code to the '\<plugins\> ... \</plugins\>'.
+I added the code to the '\<plugins\> ... \</plugins\>'.
 
-If you are using over the JDK 9, you will meet the error message.
+If you use over the JDK 9, you will meet the error message.
 
 ```
 Caused by: java.lang.ClassNotFoundException: javax.activation.DataSource
 ```
 
-Then you add the Java activation dependency in the plugin configuration to resolve.
+This message is resolved to add the Java activation dependency in the plugin configuration.
 
 ```xml
 <plugin>

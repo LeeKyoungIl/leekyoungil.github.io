@@ -82,7 +82,7 @@
 
 
 <div class="post-header">
-  <h1 class="post-title">When application build to the Docker image by the Dockerfile, if an localhost:2375 connection refused on the Mac OS.</h1>
+  <h1 class="post-title">When application build to the Docker image by the Dockerfile, it will be able to occur an localhost:2375 connection refused on the Mac OS.</h1>
 </div>
 <div class="post-header">
   <p class="post-meta">January 6, 2019 — 09:35</p>
@@ -94,40 +94,43 @@
 
   <article class="post-content">
     <div class = "blurb-blog">
-    <p>When we make the Docker image by the Maven and Dockerfile, on the Spring project.</p>
+    <p>When we make the Docker image by the Maven and Dockerfile on the Spring project, we take the <strong><a href="https://github.com/spotify/docker-maven-plugin">docker-maven-plugin</a></strong> among the several plugins these make the Docker image.</p>
 
-<p>There are several plugins for making the Docker image, we can use the <strong><a href="https://github.com/spotify/docker-maven-plugin">docker-maven-plugin</a></strong> of them.</p>
+<p>This story is about a occurred exception of connection refused, when I used the docker-maven-plugin.</p>
 
-<p>This story is about a occurred exception of connection refused, when I use the docker-maven-plugin.</p>
+<p>Firstly, look at the code. (<strong>pom.xml</strong>)</p>
 
-<p>First, let’s look at code of the pom.xml.</p>
-
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;plugin&gt;</span>
-    <span class="nt">&lt;groupId&gt;</span>com.spotify<span class="nt">&lt;/groupId&gt;</span>
-    <span class="nt">&lt;artifactId&gt;</span>docker-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
-    <span class="nt">&lt;version&gt;</span>0.4.9<span class="nt">&lt;/version&gt;</span>
-    <span class="nt">&lt;configuration&gt;</span>
-        <span class="nt">&lt;imageName&gt;</span>${docker.image.prefix}/${project.artifactId}<span class="nt">&lt;/imageName&gt;</span>
-        <span class="nt">&lt;dockerDirectory&gt;</span>src/main/docker<span class="nt">&lt;/dockerDirectory&gt;</span>
-        <span class="nt">&lt;resources&gt;</span>
-            <span class="nt">&lt;resource&gt;</span>
-                <span class="nt">&lt;targetPath&gt;</span>/<span class="nt">&lt;/targetPath&gt;</span>
-                <span class="nt">&lt;directory&gt;</span>${project.build.directory}<span class="nt">&lt;/directory&gt;</span>
-                <span class="nt">&lt;include&gt;</span>${project.build.finalName}.jar<span class="nt">&lt;/include&gt;</span>
-            <span class="nt">&lt;/resource&gt;</span>
-        <span class="nt">&lt;/resources&gt;</span>
-    <span class="nt">&lt;/configuration&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;plugins&gt;</span>
+...
+    <span class="nt">&lt;plugin&gt;</span>
+        <span class="nt">&lt;groupId&gt;</span>com.spotify<span class="nt">&lt;/groupId&gt;</span>
+        <span class="nt">&lt;artifactId&gt;</span>docker-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;version&gt;</span>0.4.9<span class="nt">&lt;/version&gt;</span>
+        <span class="nt">&lt;configuration&gt;</span>
+            <span class="nt">&lt;imageName&gt;</span>${docker.image.prefix}/${project.artifactId}<span class="nt">&lt;/imageName&gt;</span>
+            <span class="nt">&lt;dockerDirectory&gt;</span>src/main/docker<span class="nt">&lt;/dockerDirectory&gt;</span>
+            <span class="nt">&lt;resources&gt;</span>
+                <span class="nt">&lt;resource&gt;</span>
+                    <span class="nt">&lt;targetPath&gt;</span>/<span class="nt">&lt;/targetPath&gt;</span>
+                    <span class="nt">&lt;directory&gt;</span>${project.build.directory}<span class="nt">&lt;/directory&gt;</span>
+                    <span class="nt">&lt;include&gt;</span>${project.build.finalName}.jar<span class="nt">&lt;/include&gt;</span>
+                <span class="nt">&lt;/resource&gt;</span>
+            <span class="nt">&lt;/resources&gt;</span>
+        <span class="nt">&lt;/configuration&gt;</span>
     <span class="nt">&lt;/plugin&gt;</span>
+...
+<span class="nt">&lt;/plugins&gt;</span>
+
 </code></pre></div></div>
 
-<p>I’ve added the code to the ‘&lt;plugins&gt; … &lt;/plugins&gt;’.</p>
+<p>I added the code to the ‘&lt;plugins&gt; … &lt;/plugins&gt;’.</p>
 
-<p>If you are using over the JDK 9, you will meet the error message.</p>
+<p>If you use over the JDK 9, you will meet the error message.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Caused by: java.lang.ClassNotFoundException: javax.activation.DataSource
 </code></pre></div></div>
 
-<p>Then you add the Java activation dependency in the plugin configuration to resolve.</p>
+<p>This message is resolved to add the Java activation dependency in the plugin configuration.</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;plugin&gt;</span>
     <span class="nt">&lt;groupId&gt;</span>com.spotify<span class="nt">&lt;/groupId&gt;</span>
