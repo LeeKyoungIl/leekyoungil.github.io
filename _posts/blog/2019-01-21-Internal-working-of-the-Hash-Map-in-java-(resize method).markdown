@@ -19,7 +19,7 @@ by version of the Java8.<br>
 But, I can not explain everything at this time.<br>
 So, this article explain "resize()" method of the HashMap.
 
-Firstly look at the first of "resize()" code. 
+Firstly look at the first comment of "resize()" code. 
 
 ```
 Initializes or doubles table size.

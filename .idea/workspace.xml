@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4caa5abb-48e9-4358-92b5-9fe58c5edbaf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/posts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/posts/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/blog/2019-01-21-Internal-working-of-the-Hash-Map-in-java-(resize method).markdown" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/blog/2019-01-21-Internal-working-of-the-Hash-Map-in-java-(resize method).markdown" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -78,8 +76,8 @@
         <entry file="file://$PROJECT_DIR$/_posts/blog/2019-01-21-Internal-working-of-the-Hash-Map-in-java-(resize method).markdown">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="272">
-                <caret line="192" lean-forward="true" selection-start-line="192" selection-end-line="192" />
+              <first_editor relative-caret-position="124">
+                <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" selection-end-column="54" />
               </first_editor>
               <second_editor />
             </state>
@@ -294,18 +292,18 @@
       <workItem from="1547536117178" duration="102000" />
       <workItem from="1547537494603" duration="730000" />
       <workItem from="1547538389579" duration="861000" />
-      <workItem from="1547812381039" duration="25184000" />
+      <workItem from="1547812381039" duration="25440000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84199000" />
+    <option name="totallyTimeSpent" value="84455000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18322763" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18322763" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Gulp" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
@@ -320,7 +318,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32866243" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32866243" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -601,8 +599,8 @@
     <entry file="file://$PROJECT_DIR$/_posts/blog/2019-01-21-Internal-working-of-the-Hash-Map-in-java-(resize method).markdown">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="272">
-            <caret line="192" lean-forward="true" selection-start-line="192" selection-end-line="192" />
+          <first_editor relative-caret-position="124">
+            <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" selection-end-column="54" />
           </first_editor>
           <second_editor />
         </state>
