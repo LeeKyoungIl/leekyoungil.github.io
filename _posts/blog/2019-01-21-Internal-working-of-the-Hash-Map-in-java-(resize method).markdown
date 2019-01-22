@@ -7,8 +7,7 @@ categories: [blog]
 tags: [hashmap, resize, java]
 ---
 
-The developers of java application are always to developing application<br> 
-with the HashMap, so do I.<br>
+The developers of java application are always to developing with the HashMap, so do I
 
 Most developers are already knows, how the HashMap works in the Java. <br>
 So, this article not handle about theory of the HashMap. 
@@ -16,7 +15,7 @@ So, this article not handle about theory of the HashMap.
 This article explain about components of the HashMap source code <br>
 by version of the Java8.<br>
 
-But, I can not explain everything at this time.<br>
+But, I can't explain everything at this time.<br>
 So, this article explain "resize()" method of the HashMap.
 
 Firstly look at the first comment of "resize()" code. 
@@ -128,7 +127,7 @@ Let's check the code of line number of 6 to 19 by flow.
 
 There are two important variables, In this part.
 
-Firstly, the oldCap, it is stored existing size of the HashMap (HashTable).<br>
+Firstly, the oldCap, it is stored existing size of the HashMap(HashTable).<br>
 If data input into the HashMap at the first time, the oldCap value is 16.<br>
 
 This value(capacity) can be changed at the first time. <br>
@@ -156,7 +155,7 @@ The value of threshold is multiplied by DEFAULT_LOAD_FACTOR and DEFAULT_INITIAL_
  - DEFAULT_LOAD_FACTOR is 0.75
  - DEFAULT_INITIAL_CAPACITY is 16 (1 << 4)
  
-The title The "resize()" method of this article is called by The value of threshold or at the first insert into the HashMap.
+The title the "resize()" method of this article is called by the value of threshold or at the first insert into the HashMap.
 
 Back in to code.
 
@@ -186,14 +185,14 @@ So, before as i said, this method role is "Initializes or doubles table size".<b
 We talk about initialization until this time, and we will talk about doubles now.
 
 The source code is too complex, but the key point is simple.
-Look at the line of code 39 to 40, there are type of The node variables loHead, loTail and hiHead, hiTail.
+Look at the line of code 39 to 40, there are type of the node variables loHead, loTail and hiHead, hiTail.
  - The node variable is the Linked list.<br>
  
 The size of HashMap increase by double, so the existing data must be distributed equally among the increased space.<br>
 
 The variables are used at this time. 
 
-The datas are re-stored again based on the value of the HashData.
+The data is re-stored again based on the value of the Hash-Value.
 
 Let's check the code of line number 44 to 57.
 
