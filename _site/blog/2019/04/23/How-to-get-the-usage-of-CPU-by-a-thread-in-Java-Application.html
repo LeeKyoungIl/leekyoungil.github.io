@@ -98,9 +98,9 @@
 I will introduce a Simple way of them. <br /></p>
 
 <p><img src="https://user-images.githubusercontent.com/4101636/56628166-bb432700-6683-11e9-8a14-82ded5305282.png" alt="image" width="100%" />
-There is a Java Applications, the process id is 43413. <br /></p>
+There is a Java Applications, the process id is <strong>43413</strong>. <br /></p>
 
-<p>And look for a thread id the usage a lot of CPU by ps command. <br /></p>
+<p>And look for a thread id the usage a lot of CPU by <strong>ps</strong> command. <br /></p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ps -mo pcpu,lwp -p 43413| sort -r -n | head
 </code></pre></div></div>
@@ -108,17 +108,18 @@ There is a Java Applications, the process id is 43413. <br /></p>
 <p><img src="https://user-images.githubusercontent.com/4101636/56628245-0bba8480-6684-11e9-9065-d2d5e22eba6e.png" alt="image" width="100%" />
 so we can check the usage of CPU by thread ordered. <br /></p>
 
-<p>Look at the right side, that is a thread id, it’s a decimal value. we have to convert to a hex value.</p>
+<p>Look at the right side, that is a <strong>thread id</strong>, it’s a decimal value.<br />
+<strong>we have to convert to a hex value</strong>.</p>
 
 <p>use <a href="https://www.binaryhexconverter.com/decimal-to-hex-converter">this</a> online converter. <br /></p>
 
-<p>Convert the decimal value 75960 to hex is 128B8. <br /></p>
+<p>Convert the decimal value 75960 to hex is <strong>128B8</strong>. <br /></p>
 
 <p>Next, then let’s get a thread dump.<br /></p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kill -3 43413
 </code></pre></div></div>
 
-<p>Finally, find a dump data by value of 128B8, And check the code.</p>
+<p>Finally, find a dump data by value of <strong>128B8</strong>, And <strong>check and fix your the code</strong>.</p>
 
 <p><img src="https://user-images.githubusercontent.com/4101636/56628246-0bba8480-6684-11e9-9eea-77b237fb5cbf.png" alt="image" width="100%" /></p>
 
