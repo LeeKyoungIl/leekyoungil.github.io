@@ -19,12 +19,14 @@ But sometimes, It may be good to try the GC tuning. <br>
 ![image](https://user-images.githubusercontent.com/4101636/58749946-017f7780-84c7-11e9-8b59-bc27eb4c4aa6.png){: width="100%" }
 
 You are already have known about the G1GC, let see this picture. <br>
+
 The G1GC structure is similar to the chessboard. <br>
 The area divided like a chessboard is called the region. <br>
-The region status is to change to the Eden, Survivor, Old and that default size is 2MB. <br>
+The region status is to change to the Eden, Survivor, Old <br> 
+and that default size is 2MB. <br>
 
 if generate Object over 2MB in the Heap memory, <br> 
-Objects are stored in the partitioned Region area. <br><br>
+Objects are stored in the partitioned Region area. <br>
 
 I will introduce my case. <br> 
 
@@ -46,7 +48,7 @@ I compared the general options with the changed region sizes <b>for a day</b>. (
 -XX:G1ReservePercent=n
 ```
 
-### Heap Memory 
+<b>Heap Memory</b>
 1. Basic options.
 ![image](https://user-images.githubusercontent.com/4101636/58750546-d436c780-84ce-11e9-970c-bd8f5ff1a969.png){: width="100%" }
 2. Changed options.
@@ -54,7 +56,7 @@ I compared the general options with the changed region sizes <b>for a day</b>. (
 
 The usage of the Heap memory is decreased at a peak time.
 
-### GC Time
+<b>GC Time</b>
 1. Basic options.
 ![image](https://user-images.githubusercontent.com/4101636/58750677-6390aa80-84d0-11e9-8652-42d9f3e2b82b.png){: width="100%" }
 2. Changed options.
@@ -62,7 +64,7 @@ The usage of the Heap memory is decreased at a peak time.
 
 The GC time is about 50 percent faster.
 
-### G1 Collection Phases statics
+<b>G1 Collection Phases statics</b>
 1. Basic options.
 ![image](https://user-images.githubusercontent.com/4101636/58750813-b454d300-84d1-11e9-8b0d-e7a1cddb086b.png){: width="100%" }
 2. Changed options.

@@ -105,13 +105,15 @@ But sometimes, It may be good to try the GC tuning. <br /></p>
 
 <p><img src="https://user-images.githubusercontent.com/4101636/58749946-017f7780-84c7-11e9-8b59-bc27eb4c4aa6.png" alt="image" width="100%" /></p>
 
-<p>You are already have known about the G1GC, let see this picture. <br />
-The G1GC structure is similar to the chessboard. <br />
+<p>You are already have known about the G1GC, let see this picture. <br /></p>
+
+<p>The G1GC structure is similar to the chessboard. <br />
 The area divided like a chessboard is called the region. <br />
-The region status is to change to the Eden, Survivor, Old and that default size is 2MB. <br /></p>
+The region status is to change to the Eden, Survivor, Old <br /> 
+and that default size is 2MB. <br /></p>
 
 <p>if generate Object over 2MB in the Heap memory, <br /> 
-Objects are stored in the partitioned Region area. <br /><br /></p>
+Objects are stored in the partitioned Region area. <br /></p>
 
 <p>I will introduce my case. <br /></p>
 
@@ -131,7 +133,7 @@ and it is over 6M per request. <br /></p>
 <span class="nt">-XX</span>:G1ReservePercent<span class="o">=</span>n
 </code></pre></div></div>
 
-<h3 id="heap-memory">Heap Memory</h3>
+<p><b>Heap Memory</b></p>
 <ol>
   <li>Basic options.
 <img src="https://user-images.githubusercontent.com/4101636/58750546-d436c780-84ce-11e9-970c-bd8f5ff1a969.png" alt="image" width="100%" /></li>
@@ -141,7 +143,7 @@ and it is over 6M per request. <br /></p>
 
 <p>The usage of the Heap memory is decreased at a peak time.</p>
 
-<h3 id="gc-time">GC Time</h3>
+<p><b>GC Time</b></p>
 <ol>
   <li>Basic options.
 <img src="https://user-images.githubusercontent.com/4101636/58750677-6390aa80-84d0-11e9-8652-42d9f3e2b82b.png" alt="image" width="100%" /></li>
@@ -151,7 +153,7 @@ and it is over 6M per request. <br /></p>
 
 <p>The GC time is about 50 percent faster.</p>
 
-<h3 id="g1-collection-phases-statics">G1 Collection Phases statics</h3>
+<p><b>G1 Collection Phases statics</b></p>
 <ol>
   <li>Basic options.
 <img src="https://user-images.githubusercontent.com/4101636/58750813-b454d300-84d1-11e9-8b0d-e7a1cddb086b.png" alt="image" width="100%" /></li>
