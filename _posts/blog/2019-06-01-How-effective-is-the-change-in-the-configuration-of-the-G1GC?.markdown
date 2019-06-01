@@ -1,7 +1,7 @@
 ---
 layout: post
 published: true
-title: "How effective is the change in the configuration of the G1GC option?"
+title: "How effective is the change in the configuration of the G1GC?"
 date: 2019-06-01 10:00:30 -0400
 categories: [blog]
 tags: [gc, g1, jvm, java, performance]
