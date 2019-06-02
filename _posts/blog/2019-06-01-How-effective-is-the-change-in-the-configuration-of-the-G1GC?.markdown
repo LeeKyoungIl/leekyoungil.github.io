@@ -28,6 +28,9 @@ and that default size is allocated the Max Heap size divided by 2048. <br>
 if generate Object over that value (<b>max heap / 2048</b>) in the Heap memory, <br> 
 Objects are stored in the partitioned Region area. <br>
 
+Of course, Big Object (over than 50% of the region size) is stored <br>
+in the Humongous area, But it is very slow.<br>
+
 I will introduce my case. <br> 
 
 My Application is handling encoded image data by base64 <br> 
@@ -71,7 +74,7 @@ The GC time is about 50 percent faster.
 ![image](https://user-images.githubusercontent.com/4101636/58750838-dea69080-84d1-11e9-9de0-7a66298ffa27.png){: width="100%" }
 
 Because of One object was stored in one region, <br>
-the STW(Stop-The-World) doesn't occur because the GC affects only <br>
+the FullGC(Long Stop-The-World) doesn't occur because the GC affects only <br>
 one the region when GC occurs. <br>
 
 <b>this is my speculation.</b>
