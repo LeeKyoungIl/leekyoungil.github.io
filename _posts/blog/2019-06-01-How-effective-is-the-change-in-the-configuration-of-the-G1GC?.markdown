@@ -23,9 +23,9 @@ You are already have known about the G1GC, let see this picture. <br>
 The G1GC structure is similar to the chessboard. <br>
 The area divided like a chessboard is called the region. <br>
 The region status is to change to the Eden, Survivor, Old <br> 
-and that default size is 2MB. <br>
+and that default size is allocated the Max Heap size divided by 2048. <br>
 
-if generate Object over 2MB in the Heap memory, <br> 
+if generate Object over that value (<b>max heap / 2048</b>) in the Heap memory, <br> 
 Objects are stored in the partitioned Region area. <br>
 
 I will introduce my case. <br> 
