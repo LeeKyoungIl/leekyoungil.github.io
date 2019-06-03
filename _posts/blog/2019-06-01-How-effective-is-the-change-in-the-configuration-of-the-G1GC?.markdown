@@ -74,13 +74,13 @@ The GC time is about 50 percent faster.
 ![image](https://user-images.githubusercontent.com/4101636/58750838-dea69080-84d1-11e9-9de0-7a66298ffa27.png){: width="100%" }
 
 Because of One object was stored in one region, <br>
-the FullGC(Long Stop-The-World) doesn't occur because the GC affects only <br>
-one the region when GC occurs. <br>
+the FullGC(Long Stop-The-World) doesn't occur, <br>
+because the GC affects only one the region when GC occurs. <br>
 
 <b>this is my speculation.</b>
 
 My conclusion is that you have a large memory size to handle per request.<br>
-We have to try it.
+You should consider it.
 
 
 
