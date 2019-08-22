@@ -11,7 +11,7 @@ tags: [levenshtein, distance, algorithm]
 
 The Levenshtein Algorithm compare A and B string.<br>
 Returns 0(zero) If both are equal and Integer value if both are different.<br>
-The Integer value is the number of times you need to modify the two values to ve the equal.<br>
+The Integer value is the number of times you need to modify the two values to be the equal.<br>
 Of course, the smaller the value is similar.
 
 ## Example 
@@ -36,7 +36,7 @@ Finally, The value at the bottom right is the result.
 This example result value is 3. It means, you have to modify 3 times to make the texts equals. 
 So, the value is 0(zero), means the same text.
 
-Let's look at the library([Github](https://github.com/LeeKyoungIl/illuminati/tree/master/illuminati-util/illuminati-levenshtein)) in the Java.<br> 
+Let's look at the library([Github](https://github.com/LeeKyoungIl/illuminati/tree/master/illuminati/illuminati-util/illuminati-levenshtein)) in the Java.<br> 
 You can easily add it to the Maven or Gradle dependency.<br>
 
 That library is open source. And I made it. <br>
