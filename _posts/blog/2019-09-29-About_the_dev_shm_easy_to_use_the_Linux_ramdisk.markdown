@@ -1,7 +1,7 @@
 ---
 layout: post
 published: true
-title: "About the dev shm, easy to use linux ram disk"
+title: "About the '/dev/shm', easy to use the Linux ramdisk"
 date: 2019-09-29 10:00:30 -0400
 categories: [blog]
 tags: [nginx, cache, proxy]
