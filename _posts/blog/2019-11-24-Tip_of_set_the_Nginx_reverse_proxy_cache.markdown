@@ -38,7 +38,7 @@ Also, for example, once a request needs many resources. so some service logics a
 
 ## How to set the Nginx reverse proxy cache?
 
-```shell script
+```
 proxy_cache_path /home/user/cache/nginx levels=1:2 keys_zone=select_cache_zone:10m max_size=2g inactive=15m;
 proxy_cache_key $request_method$request_uri$args;
 
