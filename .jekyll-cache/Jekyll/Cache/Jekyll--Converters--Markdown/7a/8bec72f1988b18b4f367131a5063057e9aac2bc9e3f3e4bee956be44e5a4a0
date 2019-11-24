@@ -1,0 +1,35 @@
+I"�<h2 id="what-is-the-dev-shm">What is the dev shm?</h2>
+
+<p>You can check disk partition in linux by the “df” command, the “/dev/shm” can be found.</p>
+
+<p><img src="https://user-images.githubusercontent.com/4101636/65818103-4931c800-e249-11e9-948a-753db12b3eba.png" alt="image" width="100%" /></p>
+
+<p>Now, let’s have a look at the screenshot. The size is 2G, the size is set half of the main memory.<br /></p>
+
+<p>Don’t worry. It is not actually assigned half of the main memory.
+It is only assigned to memory when data save to that space.</p>
+
+<p>The “/dev/shm” is the Virtual Memory FileSystem. It can access all of from the Linux Processes.</p>
+
+<p>And You will see the “tmpfs”. It’s a filesystem. simply, H\W memory can use a like disk.</p>
+
+<p>There is something similar. It’s a Ramdisk. The Ramdisk and the “tmpfs” are the same as to save them in memory.</p>
+
+<p>The difference is, the Ramdisk has a limit of space. But the “tmpfs” is If other processes are located in the memory When the sum of the processes used memory size and the “/dev/shm (tmpfs)” size over the memory size.<br /></p>
+
+<p>The Linux will be using a swap partition. You know, When the swap partition is using, the system is slow down.</p>
+
+<h2 id="what-should-we-check-before-using">What should We check before using?</h2>
+
+<p>As mentioned above, The “/dev/shm” can access all of the processes.
+Because. We should be careful about file and directory permission.</p>
+
+<p>We do better make a personal directory.</p>
+
+<p>And the “/dev/shm” is a memory, and the memory is volatile. Because, When rebooting the system, all data will be deleted in the space.</p>
+
+<h2 id="where-should-we-use-it">Where should we use it?</h2>
+
+<p>In application. Sometimes we use a temporary file. In this situation easily change the path to the “/dev/shm”, we will get fast I/O,
+or We might be used for storage of batch process.</p>
+:ET

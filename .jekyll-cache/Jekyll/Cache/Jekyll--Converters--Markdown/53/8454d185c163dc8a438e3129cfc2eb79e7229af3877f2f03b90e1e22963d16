@@ -1,0 +1,97 @@
+I"6<p>When we make the Docker image by the Maven and Dockerfile on the Spring project, we take the <strong><a href="https://github.com/spotify/docker-maven-plugin">docker-maven-plugin</a></strong> among the several plugins these make the Docker image.</p>
+
+<p>This story is about a occurred exception of connection refused, when I used the docker-maven-plugin.</p>
+
+<p>Firstly, look at the code. (<strong>pom.xml</strong>)</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;plugins&gt;</span>
+...
+    <span class="nt">&lt;plugin&gt;</span>
+        <span class="nt">&lt;groupId&gt;</span>com.spotify<span class="nt">&lt;/groupId&gt;</span>
+        <span class="nt">&lt;artifactId&gt;</span>docker-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;version&gt;</span>0.4.9<span class="nt">&lt;/version&gt;</span>
+        <span class="nt">&lt;configuration&gt;</span>
+            <span class="nt">&lt;imageName&gt;</span>${docker.image.prefix}/${project.artifactId}<span class="nt">&lt;/imageName&gt;</span>
+            <span class="nt">&lt;dockerDirectory&gt;</span>src/main/docker<span class="nt">&lt;/dockerDirectory&gt;</span>
+            <span class="nt">&lt;resources&gt;</span>
+                <span class="nt">&lt;resource&gt;</span>
+                    <span class="nt">&lt;targetPath&gt;</span>/<span class="nt">&lt;/targetPath&gt;</span>
+                    <span class="nt">&lt;directory&gt;</span>${project.build.directory}<span class="nt">&lt;/directory&gt;</span>
+                    <span class="nt">&lt;include&gt;</span>${project.build.finalName}.jar<span class="nt">&lt;/include&gt;</span>
+                <span class="nt">&lt;/resource&gt;</span>
+            <span class="nt">&lt;/resources&gt;</span>
+        <span class="nt">&lt;/configuration&gt;</span>
+    <span class="nt">&lt;/plugin&gt;</span>
+...
+<span class="nt">&lt;/plugins&gt;</span>
+
+</code></pre></div></div>
+
+<p>I added the code to the ‘&lt;plugins&gt; … &lt;/plugins&gt;’.</p>
+
+<p>If you use over the JDK 9, you will meet the error message.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Caused by: java.lang.ClassNotFoundException: javax.activation.DataSource
+</code></pre></div></div>
+
+<p>This message is resolved to add the Java activation dependency in the plugin configuration.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;plugin&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>com.spotify<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>docker-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>0.4.9<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;configuration&gt;</span>
+        <span class="nt">&lt;imageName&gt;</span>${docker.image.prefix}/${project.artifactId}<span class="nt">&lt;/imageName&gt;</span>
+        <span class="nt">&lt;dockerDirectory&gt;</span>src/main/docker<span class="nt">&lt;/dockerDirectory&gt;</span>
+        <span class="nt">&lt;resources&gt;</span>
+            <span class="nt">&lt;resource&gt;</span>
+                <span class="nt">&lt;targetPath&gt;</span>/<span class="nt">&lt;/targetPath&gt;</span>
+                <span class="nt">&lt;directory&gt;</span>${project.build.directory}<span class="nt">&lt;/directory&gt;</span>
+                <span class="nt">&lt;include&gt;</span>${project.build.finalName}.jar<span class="nt">&lt;/include&gt;</span>
+            <span class="nt">&lt;/resource&gt;</span>
+        <span class="nt">&lt;/resources&gt;</span>
+    <span class="nt">&lt;/configuration&gt;</span>
+    <span class="nt">&lt;dependencies&gt;</span>
+        <span class="nt">&lt;dependency&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>javax.activation<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>activation<span class="nt">&lt;/artifactId&gt;</span>
+            <span class="nt">&lt;version&gt;</span>1.1.1<span class="nt">&lt;/version&gt;</span>
+        <span class="nt">&lt;/dependency&gt;</span>
+    <span class="nt">&lt;/dependencies&gt;</span>
+    <span class="nt">&lt;/plugin&gt;</span>
+</code></pre></div></div>
+
+<p>And next problem is the connection refused, at the <strong>mvn docker:build</strong> command executed.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ERROR] Failed to execute goal com.spotify:docker-maven-plugin:0.4.9:build 
+(default-cli) on project image-reader-api: Exception caught: java.util.concurrent.ExecutionException: 
+com.spotify.docker.client.shaded.javax.ws.rs.ProcessingException: org.apache.http.conn.HttpHostConnectException: 
+Connect to localhost:2375 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused 
+(Connection refused) -&gt; [Help 1]
+</code></pre></div></div>
+
+<p>When we look at the Exception messages, it says that failed connect to the the 2375 port of the Localhost.</p>
+
+<p>The 2375 port is the Rest-API port of docker daemon, if we are using the Windows-os, it’s easy to resolve.</p>
+
+<p>Go to settings menu of the Docker for windows, and check to the Expose daemon on.</p>
+
+<p><img src="https://user-images.githubusercontent.com/4101636/50725577-daed2880-1142-11e9-9999-01f5a6a8402c.png" alt="image" width="100%" />
+<span style="color: #A6A6A6; font-size: 12px;">(https://intellij-support.jetbrains.com/hc/en-us/community/posts/115000327324–Docker-Setting-Connection-refused-on-localhost-2375)</span></p>
+
+<p>But, we can’t find that menu on the Docker for mac-os.</p>
+
+<p><img src="https://user-images.githubusercontent.com/4101636/50725672-1e946200-1144-11e9-9630-6c8dba694a8d.png" alt="image" width="100%" /></p>
+
+<p>How should we resolve this issue?</p>
+
+<p>The easiest way is to add the small linux container on the Local docker, and it is redirect the Docker api to tcp port on our the Mac-os host.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run -d -v /var/run/docker.sock:/var/run/docker.sock -p 127.0.0.1:2375:2375 
+bobrik/socat TCP-LISTEN:2375,fork UNIX-CONNECT:/var/run/docker.sock
+
+export DOCKER_HOST=tcp://localhost:2375
+</code></pre></div></div>
+
+<p>Let’s try that one again, perhaps the issue has been resolved.</p>
+:ET

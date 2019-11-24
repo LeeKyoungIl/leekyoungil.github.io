@@ -1,0 +1,215 @@
+I"E<p>I’ve been working on process of a really big String replace on the Java recently.</p>
+
+<p>Working flow is simple.</p>
+
+<p>When text input to my code, regular expression works at least more than 1,000 times.
+Namely, strings are created in the Heap memory so much.</p>
+
+<p>Sometimes, this situation gives strain on the system memory resource. 
+Because, the text string is a little large and more than 1,000 similar text data are generated on memory.</p>
+
+<p>Let’s look the code.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">replaceAll</span> <span class="o">(</span><span class="nc">Pattern</span> <span class="n">pattern</span><span class="o">,</span> <span class="nc">String</span> <span class="n">txt</span><span class="o">,</span> <span class="nc">String</span> <span class="n">replacement</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">return</span> <span class="n">pattern</span><span class="o">.</span><span class="na">matcher</span><span class="o">(</span><span class="n">txt</span><span class="o">).</span><span class="na">replaceAll</span><span class="o">(</span><span class="n">replacement</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Nothing special?</p>
+
+<p>But, this code runs more than 1,000 times per user request in one for-loop syntax.</p>
+
+<p>For example.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">String</span> <span class="n">resultString</span> <span class="o">=</span> <span class="s">"Test String. (this string is more then 5kb.)"</span><span class="o">;</span>
+<span class="k">for</span> <span class="o">(</span><span class="nc">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">String</span><span class="o">&gt;</span> <span class="n">replaceEntry</span> <span class="o">:</span> <span class="n">dictionaryMap</span><span class="o">.</span><span class="na">entrySet</span><span class="o">())</span> <span class="o">{</span>
+    <span class="o">...</span>
+    <span class="n">resultString</span> <span class="o">=</span> <span class="n">replaceAll</span><span class="o">(</span><span class="n">regexPattern</span><span class="o">,</span> <span class="n">resultString</span><span class="o">,</span> <span class="n">replaceValue</span><span class="o">);</span>
+    <span class="o">...</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>At this time, what will happened in the heap memory?</p>
+
+<p>Maybe, more than 1,000 times of Immutable string objects will be created in the heap memory.</p>
+
+<p>In fact, it’s not a big deal.</p>
+
+<p>The string objects will be cleaned by the garbage collector. <br />
+(Somebody told me, God only knows when garbage collector executed.)</p>
+
+<p>We will see the graph as below.
+<img src="https://user-images.githubusercontent.com/4101636/50532906-a934fa00-0b63-11e9-9668-196000d60862.png" alt="image" width="100%" /></p>
+
+<p>This is ordinary graph of garbage collector.</p>
+
+<p>But, live data is too big. <br />
+It seems to be over 3~4G roughly.</p>
+
+<p>Check memory usage by profiler.
+<img src="https://user-images.githubusercontent.com/4101636/50547521-1dfc5700-0c7e-11e9-9657-c2e4c0a4fddc.png" alt="image" width="100%" /></p>
+
+<p>Arrays of char and byte occupy a large part of memory.</p>
+
+<p>Then, what is the solution?</p>
+
+<p>In my opinion, there are two solutions.</p>
+
+<ol>
+  <li>When you allocate memory resource, reuse it.</li>
+  <li>And make the garbage collector run faster.</li>
+</ol>
+
+<p>The first solution is using the StringBuffer, StringBuilder class.<br />
+These classes using the char array allocate String data.</p>
+
+<p>Fortunately, some replacer function codes are in the github<br /> 
+and we can get by google’s search engine results.</p>
+
+<p>But, there are still issue.</p>
+
+<ul>
+  <li>Does this function is using the StringBuffer, StringBuilder classes,<br />
+ and regular expression?</li>
+</ul>
+
+<p>Many open source codes did not satisfy the conditions.<br />
+But, solution was close.</p>
+
+<p>The appendReplacement method of java matcher class is satisfy the conditions.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="nc">Matcher</span> <span class="nf">appendReplacement</span><span class="o">(</span><span class="nc">StringBuffer</span> <span class="n">sb</span><span class="o">,</span> <span class="nc">String</span> <span class="n">replacement</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">cursor</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="nc">StringBuilder</span> <span class="n">result</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">StringBuilder</span><span class="o">();</span>
+
+    <span class="k">while</span> <span class="o">(</span><span class="n">cursor</span> <span class="o">&lt;</span> <span class="n">replacement</span><span class="o">.</span><span class="na">length</span><span class="o">())</span> <span class="o">{</span>
+        <span class="o">...</span>
+    <span class="o">}</span>
+    <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">text</span><span class="o">,</span> <span class="n">lastAppendPosition</span><span class="o">,</span> <span class="n">first</span><span class="o">);</span>
+    <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">result</span><span class="o">);</span>
+
+    <span class="n">lastAppendPosition</span> <span class="o">=</span> <span class="n">last</span><span class="o">;</span>
+    <span class="k">return</span> <span class="k">this</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+<p>The source code is too long, I can’t paste it.<br /> 
+So, you can check the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/regex/Matcher.html#appendReplacement-java.lang.StringBuffer-java.lang.String-">api document link</a> instead of the code.</p>
+
+<p>If you look at the code, it’s using the StringBuilder, StringBuffer classes.<br />
+And the appendReplacement is base of Matcher class, so basically<br /> 
+it support regular expression.</p>
+
+<p>Of course, the replaceAll method in Matcher class is too using appendReplacement, let’s look at this code again.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">replaceAll</span> <span class="o">(</span><span class="nc">Pattern</span> <span class="n">pattern</span><span class="o">,</span> <span class="nc">String</span> <span class="n">txt</span><span class="o">,</span> <span class="nc">String</span> <span class="n">replacement</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">return</span> <span class="n">pattern</span><span class="o">.</span><span class="na">matcher</span><span class="o">(</span><span class="n">txt</span><span class="o">).</span><span class="na">replaceAll</span><span class="o">(</span><span class="n">replacement</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>The replaceAll method is returning to immutable string object, so we can’t save the memory resources.</p>
+
+<p>Let’s looking the replaceAll code in Matcher class.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="nc">String</span> <span class="nf">replaceAll</span><span class="o">(</span><span class="nc">String</span> <span class="n">replacement</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">reset</span><span class="o">();</span>
+    <span class="kt">boolean</span> <span class="n">result</span> <span class="o">=</span> <span class="n">find</span><span class="o">();</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">result</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">StringBuffer</span> <span class="n">sb</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">StringBuffer</span><span class="o">();</span>
+        <span class="k">do</span> <span class="o">{</span>
+            <span class="n">appendReplacement</span><span class="o">(</span><span class="n">sb</span><span class="o">,</span> <span class="n">replacement</span><span class="o">);</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">find</span><span class="o">();</span>
+        <span class="o">}</span> <span class="k">while</span> <span class="o">(</span><span class="n">result</span><span class="o">);</span>
+        <span class="n">appendTail</span><span class="o">(</span><span class="n">sb</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">sb</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">text</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Before we look the code, the appendReplacement method is using stringBuffer by parameter.</p>
+
+<p>As you know, the stringBuffer is slower than the stringBuilder.</p>
+
+<p>From above, it’s code version of the jdk8, the interesting thing is the code changed the stringBuffer to stringBuilder since the jdk9.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/*
+ ...
+ * @since 9
+ */</span>
+<span class="kd">public</span> <span class="nc">Matcher</span> <span class="nf">appendReplacement</span><span class="o">(</span><span class="nc">StringBuilder</span> <span class="n">sb</span><span class="o">,</span> <span class="nc">String</span> <span class="n">replacement</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">// If no match, return error</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">first</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">)</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nf">IllegalStateException</span><span class="o">(</span><span class="s">"No match available"</span><span class="o">);</span>
+    <span class="nc">StringBuilder</span> <span class="n">result</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">StringBuilder</span><span class="o">();</span>
+    <span class="n">appendExpandedReplacement</span><span class="o">(</span><span class="n">replacement</span><span class="o">,</span> <span class="n">result</span><span class="o">);</span>
+    <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">text</span><span class="o">,</span> <span class="n">lastAppendPosition</span><span class="o">,</span> <span class="n">first</span><span class="o">);</span>
+    <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">result</span><span class="o">);</span>
+    <span class="n">lastAppendPosition</span> <span class="o">=</span> <span class="n">last</span><span class="o">;</span>
+    <span class="n">modCount</span><span class="o">++;</span>
+    <span class="k">return</span> <span class="k">this</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Of course, the others codes are many changed.</p>
+
+<p>We can make similar code to that above (replaceAll), <br />
+and we have to try for saving memory resource.<br /></p>
+
+<p>For this reason, I was bound StringBuffer reference by parameter.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">replaceAllWithReUseBuilder</span> <span class="o">(</span><span class="nc">StringBuilder</span> <span class="n">tmpBufferString</span><span class="o">,</span> <span class="nc">Pattern</span> <span class="n">pattern</span><span class="o">,</span> <span class="nc">StringBuilder</span> <span class="n">reUseBuilder</span><span class="o">,</span> <span class="nc">String</span> <span class="n">replacement</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">Matcher</span> <span class="n">matcher</span> <span class="o">=</span> <span class="n">pattern</span><span class="o">.</span><span class="na">matcher</span><span class="o">(</span><span class="n">reUseBuilder</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+    <span class="n">tmpBufferString</span><span class="o">.</span><span class="na">setLength</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+    <span class="k">while</span> <span class="o">(</span><span class="n">matcher</span><span class="o">.</span><span class="na">find</span><span class="o">())</span> <span class="o">{</span>
+        <span class="n">matcher</span><span class="o">.</span><span class="na">appendReplacement</span><span class="o">(</span><span class="n">tmpBufferString</span><span class="o">,</span> <span class="n">replacement</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="n">matcher</span><span class="o">.</span><span class="na">appendTail</span><span class="o">(</span><span class="n">tmpBufferString</span><span class="o">);</span>
+    <span class="n">reUseBuilder</span><span class="o">.</span><span class="na">setLength</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+    <span class="n">reUseBuilder</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">tmpBufferString</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>In all, the two stringBuilder is used, one is temporary variable using in the while-loop, and the other one is used as a result store.</p>
+
+<p>Both variables are using already generated reference, so we can reuse memory resources.</p>
+
+<p>Like this.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">String</span> <span class="n">resultString</span> <span class="o">=</span> <span class="s">"Test String. (this string is more then 5kb.)"</span><span class="o">;</span>
+
+<span class="nc">StringBuilder</span> <span class="n">reUseStringBuilder</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">StringBuilder</span><span class="o">(</span><span class="n">resultString</span><span class="o">);</span>
+<span class="nc">StringBuilder</span> <span class="n">tmpBufferString</span> <span class="o">=</span> <span class="k">new</span> <span class="n">tmpBufferString</span><span class="o">(</span><span class="n">reUseStringBuilder</span><span class="o">.</span><span class="na">length</span><span class="o">());</span>
+
+<span class="k">for</span> <span class="o">(</span><span class="nc">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">String</span><span class="o">&gt;</span> <span class="n">replaceEntry</span> <span class="o">:</span> <span class="n">dictionaryMap</span><span class="o">.</span><span class="na">entrySet</span><span class="o">())</span> <span class="o">{</span>
+    <span class="o">...</span>
+    <span class="n">replaceAllWithReUseBuilder</span><span class="o">(</span><span class="n">tmpBufferString</span><span class="o">,</span> <span class="n">regexPattern</span><span class="o">,</span> <span class="n">reUseStringBuilder</span><span class="o">,</span> <span class="n">replaceValue</span><span class="o">);</span>
+    <span class="o">...</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>The result is very interesting.</p>
+
+<p><img src="https://user-images.githubusercontent.com/4101636/50571445-66d31d80-0dee-11e9-98b3-f770c58a649f.png" alt="image" width="100%" /></p>
+
+<p>Memory usage has decreased.<br />
+Check memory usage by profiler again.</p>
+
+<p><img src="https://user-images.githubusercontent.com/4101636/50571500-8dde1f00-0def-11e9-8dad-f449fe285dd4.png" alt="image" width="100%" /></p>
+
+<p>In my opinion, it’s a meaningful result.</p>
+
+<p>When system is at the end of limit, the jvm is first to be affected,<br /> 
+at this time, most important process is the garbage collector.</p>
+
+<p>As you know, if target of clean objects are too much, the garbage collector is <br />
+need much the cpu resources, because, when at this situation, <br />
+if our application is usage memory usage a little, we can avoid system failure.</p>
+
+<p>There’s saying, “The foot of the candle is dark.”, <br />
+I wander in the Google’s search result and github to resolve the issue,<br />
+But, solution was close.</p>
+
+<p>Because of this issue, I learned the appendExpandedReplacement in java matcher class.</p>
+
+<p>It will be useful for my work.</p>
+:ET
