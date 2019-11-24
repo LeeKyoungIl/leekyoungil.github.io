@@ -60,7 +60,8 @@ server {
 }
 ```
 
-#### Options to check today
+Options to check today
+
  - proxy_cache_path : Local disk directory path for saving the cache.
     - levels : this sets up a second-level directory hierarchy under the "proxy_cache_path"
     - keys_zone : cache area name.
@@ -72,7 +73,7 @@ server {
  
 The remaining options, check the [Nginx official document](http://nginx.org/en/docs/http/ngx_http_proxy_module.html).
  
-### Conclusion 
+Conclusion 
  
 So look at the "proxy_cache_path", the Nginx reverse proxy cache use a disk basically.
 Because of this the IO access performance not good, So how to use memory in this part?

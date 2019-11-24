@@ -1,4 +1,4 @@
-I"�<h2 id="what-is-the-nginx-reverse-proxy">What is the Nginx reverse proxy</h2>
+I"X<h2 id="what-is-the-nginx-reverse-proxy">What is the Nginx reverse proxy</h2>
 
 <p>The Proxy is to connect another network through the server by indirect.</p>
 
@@ -60,7 +60,8 @@ server {
 }
 </code></pre></div></div>
 
-<h4 id="options-to-check-today">Options to check today</h4>
+<p>Options to check today</p>
+
 <ul>
   <li>proxy_cache_path : Local disk directory path for saving the cache.
     <ul>
@@ -79,7 +80,7 @@ server {
 
 <p>The remaining options, check the <a href="http://nginx.org/en/docs/http/ngx_http_proxy_module.html">Nginx official document</a>.</p>
 
-<h3 id="conclusion">Conclusion</h3>
+<p>Conclusion</p>
 
 <p>So look at the “proxy_cache_path”, the Nginx reverse proxy cache use a disk basically.
 Because of this the IO access performance not good, So how to use memory in this part?</p>
