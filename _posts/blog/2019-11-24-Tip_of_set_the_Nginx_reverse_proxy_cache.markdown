@@ -75,12 +75,12 @@ The remaining options, check the [Nginx official document](http://nginx.org/en/d
  
 Conclusion 
  
-So look at the **"proxy_cache_path"**, the Nginx reverse proxy cache use a disk basically.
-Because of this the IO access performance not good, So how to use memory in this part?
+So look at the **"proxy_cache_path"**, the Nginx reverse proxy cache **use a disk** basically.
+Because of this the IO access performance not good, So how to **use memory** in this part?
 
 very simple. use the **"/dev/shm"**.
 
-The **"/dev/shm"** is the Ramdisk to speak simply. <br>
+The **"/dev/shm"** is the **Ramdisk** to speak simply. <br>
 check my last [post](https://leekyoungil.github.io/blog/2019/09/29/About_the_dev_shm_easy_to_use_the_Linux_ramdisk.html).
 
 If you use this, the IO access performance increase easily.
