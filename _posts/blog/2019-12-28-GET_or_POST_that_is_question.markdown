@@ -21,17 +21,17 @@ Also, this post doesn't talk about the REST, talk about the content of the HTTP 
 
 ## Question
 
-Generally, When requesting a new resource over provide the contents by the Client side, You can send by the POST method with include the contents. 
+Generally, When requesting a new resource over provide the contents by the client side, You can send by the POST with include the contents. 
 
-But, The Client side did not provide contents to the server, just response some resource from the server, actually, the server is a response by generating new resource in this case, Do we have to use the GET or POST method?
+But, The client side did not provide contents to the server, just response some resource from the server, actually, the server is a response by generating new resource in this case, Do we have to use the GET or POST?
 
-For example, if the Client is requested to the Server by empty contents.
-In other words, If the Client doesn't matter about whether the returned Quiz is a new one or an existing one.
+For example, if the client is requested to the server by empty contents.
+In other words, If the client doesn't matter about whether the returned quiz is a new one or an existing one.
 
 GET send '/quizzes/new’ (It is the GET but the Server takes care of generating a new one.)
 POST send with empty contents ‘/quizzes' (It is the POST but the Server return generating a new one.)
 
-Which is a better way, the GET method or the POST method? Or, What is a better way?
+Which is a better way, the GET or POST method? or, what is a better way?
 I collected some stories about this issue.
 
 ## Opinion to use the POST method
