@@ -28,8 +28,8 @@ But, The client side did not provide contents to the server, just response some 
 For example, if the client is requested to the server by empty contents.
 In other words, If the client doesn't matter about whether the returned quiz is a new one or an existing one.
 
-GET send '/quizzes/new’ (It is the GET but the Server takes care of generating a new one.)
-POST send with empty contents ‘/quizzes' (It is the POST but the Server return generating a new one.)
+ - GET send '/quizzes/new’ (It is the GET but the Server takes care of generating a new one.)
+ - POST send with empty contents ‘/quizzes' (It is the POST but the Server return generating a new one.)
 
 Which is a better way, the GET or POST method? or, what is a better way?
 I collected some stories about this issue.
