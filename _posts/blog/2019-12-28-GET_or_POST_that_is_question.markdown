@@ -51,15 +51,15 @@ I collected some stories about this issue.
  - The Client just wants the only a quiz, does not have to worry about a new one or existing one. There is only a meaning about the read side.
 
  - The Client doesn't know is this new one or existing one, firstly they want to get a quiz so the GET is correct. For example, there is a bakery. in the act of buying bread, this is the same behavior whether you buy an existing one or a new one. (GET) I want to buy this bread make please or if you make this bread, I will buy it. (POST) this is another purpose and the bakery should take another action accordingly.
- 
- ## Not both Opinions.
+
+## Not both Opinions.
  
  - The API should be behavior oriented, not status oriented. I learned this knowledge from OOP and DDD.
  
- ## Let’s take a break
+## Let’s take a break
  
- It is very confusing. And the difficult keyword is also called 'idempotence'.
- To sum up. We can summarized as follows.
+It is very confusing. And the difficult keyword is also called 'idempotence'.
+To sum up. We can summarized as follows.
   
   - Prefer the GET. Considering the intent of the client side of the requester.
   - Prefer the POST. The HTTP is a resource. So, considering the intent of a resource.
@@ -142,8 +142,4 @@ The reason for wrote more opinions. Because I'm worried that someone always thin
 
 If it will be don't change to read later. as mentioned earlier, to use the POST + GET method. But if we want to decrease even one the HTTP request. Use the GET is better.
 
-Eventually, this post does not the perfect answer. It is just only a reference, You can have to choose in a situation.
-
-
-  
-  
+Eventually, this post does not the perfect answer. It is just only a reference, You can have to choose in a situation.  

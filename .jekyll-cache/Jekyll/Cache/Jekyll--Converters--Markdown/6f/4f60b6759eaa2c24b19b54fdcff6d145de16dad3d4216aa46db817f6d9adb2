@@ -1,4 +1,4 @@
-I"�$<p><img src="https://user-images.githubusercontent.com/4101636/71541301-2cb54100-299a-11ea-9116-da71030360d8.png" alt="image" width="100%" /></p>
+I"�$<p><img src="https://user-images.githubusercontent.com/4101636/71541301-2cb54100-299a-11ea-9116-da71030360d8.png" alt="image" width="100%" /></p>
 
 <h2 id="before-this-post-begins">Before this post begins.</h2>
 
@@ -56,16 +56,16 @@ I collected some stories about this issue.</p>
   </li>
 </ul>
 
-<p>## Not both Opinions.</p>
+<h2 id="not-both-opinions">Not both Opinions.</h2>
 
 <ul>
   <li>The API should be behavior oriented, not status oriented. I learned this knowledge from OOP and DDD.</li>
 </ul>
 
-<p>## Let’s take a break</p>
+<h2 id="lets-take-a-break">Let’s take a break</h2>
 
 <p>It is very confusing. And the difficult keyword is also called ‘idempotence’.
- To sum up. We can summarized as follows.</p>
+To sum up. We can summarized as follows.</p>
 
 <ul>
   <li>Prefer the GET. Considering the intent of the client side of the requester.</li>
@@ -155,5 +155,4 @@ Do we have to change the API from the GET to the POST in this situation? And we 
 <p>If it will be don’t change to read later. as mentioned earlier, to use the POST + GET method. But if we want to decrease even one the HTTP request. Use the GET is better.</p>
 
 <p>Eventually, this post does not the perfect answer. It is just only a reference, You can have to choose in a situation.</p>
-
 :ET
