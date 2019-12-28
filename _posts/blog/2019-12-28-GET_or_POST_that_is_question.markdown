@@ -31,7 +31,7 @@ In other words, If the client doesn't matter about whether the returned quiz is 
  - GET send '/quizzes/new’ (It is the GET but the Server takes care of generating a new one.)
  - POST send with empty contents ‘/quizzes' (It is the POST but the Server return generating a new one.)
 
-Which is a better way, the GET or POST method? or, what is a better way?
+Which is a better way, the GET or POST method?
 I collected some stories about this issue.
 
 ## Opinion to use the POST method

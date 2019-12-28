@@ -1,0 +1,160 @@
+I"�$<p><img src="https://user-images.githubusercontent.com/4101636/71541301-2cb54100-299a-11ea-9116-da71030360d8.png" alt="image" width="100%" /></p>
+
+<h2 id="before-this-post-begins">Before this post begins.</h2>
+
+<p>This post is from ‘<a href="https://homoefficio.github.io/2019/12/25/GET%EC%9D%B4%EB%83%90-POST%EB%83%90-%EA%B7%B8%EA%B2%83%EC%9D%B4-%EB%AC%B8%EC%A0%9C%EB%A1%9C%EB%8B%A4/?fbclid=IwAR0P4GM-aR9dv0bNMi9RV1gmQ6fgtXNDonsT0HPmSZKdwjzAUAoLfBphqNY">homoefficio.github.io</a>’ blog.
+I translated from Korean to English.</p>
+
+<hr />
+
+<p>There are some conclusions in this post. But these are not the perfect answers.
+Also, this post doesn’t talk about the REST, talk about the content of the HTTP method only.</p>
+
+<h2 id="question">Question</h2>
+
+<p>Generally, When requesting a new resource over provide the contents by the client side, You can send by the POST with include the contents.</p>
+
+<p>But, The client side did not provide contents to the server, just response some resource from the server, actually, the server is a response by generating new resource in this case, Do we have to use the GET or POST?</p>
+
+<p>For example, if the client is requested to the server by empty contents.
+In other words, If the client doesn’t matter about whether the returned quiz is a new one or an existing one.</p>
+
+<ul>
+  <li>GET send ‘/quizzes/new’ (It is the GET but the Server takes care of generating a new one.)</li>
+  <li>POST send with empty contents ‘/quizzes’ (It is the POST but the Server return generating a new one.)</li>
+</ul>
+
+<p>Which is a better way, the GET or POST method?
+I collected some stories about this issue.</p>
+
+<h2 id="opinion-to-use-the-post-method">Opinion to use the POST method</h2>
+
+<ul>
+  <li>
+    <p>The GET, If it can keep idempotent. the POST if not. That is a precondition. So, if a new quiz is generated, that is not idempotent. the POST is correct.</p>
+  </li>
+  <li>
+    <p>Explicitly, The URI must be for a type of resource. If the Client request missing resources then must be returned the HTTP status 404 not found. I think it seems like we must be using the POST because the server needs to generate and return a new resource.</p>
+  </li>
+  <li>
+    <p>I don’t use the GET to change the DB status. If we use the GET then keep idempotent like a pure function.</p>
+  </li>
+  <li>
+    <p>The POST, PUT, DELETE was born out of after the HTTP 1.0 version. That is control of the inside of the server. Because. If there is some change in DB, always used the method of change of the status. (in terms of resource side, DB is a part) The method area in the HTTP protocol, that is whether, it’s the server or client side, people can see it differently. But if we think about the history of the HTTP, the method is related to resource and the weight is placed on the server side owned the resource.</p>
+  </li>
+  <li>
+    <p>The POST is correct. GET path of generated resource put the location header and to returns 201 code of HTTP seems to be correct.</p>
+  </li>
+</ul>
+
+<h2 id="opinion-to-use-the-get-method">Opinion to use the GET method</h2>
+
+<ul>
+  <li>
+    <p>The Client just wants the only a quiz, does not have to worry about a new one or existing one. There is only a meaning about the read side.</p>
+  </li>
+  <li>
+    <p>The Client doesn’t know is this new one or existing one, firstly they want to get a quiz so the GET is correct. For example, there is a bakery. in the act of buying bread, this is the same behavior whether you buy an existing one or a new one. (GET) I want to buy this bread make please or if you make this bread, I will buy it. (POST) this is another purpose and the bakery should take another action accordingly.</p>
+  </li>
+</ul>
+
+<h2 id="not-both-opinions">Not both Opinions.</h2>
+
+<ul>
+  <li>The API should be behavior oriented, not status oriented. I learned this knowledge from OOP and DDD.</li>
+</ul>
+
+<h2 id="lets-take-a-break">Let’s take a break</h2>
+
+<p>It is very confusing. And the difficult keyword is also called ‘idempotence’.
+To sum up. We can summarized as follows.</p>
+
+<ul>
+  <li>Prefer the GET. Considering the intent of the client side of the requester.</li>
+  <li>Prefer the POST. The HTTP is a resource. So, considering the intent of a resource.</li>
+</ul>
+
+<h2 id="what-is-a-specification">What is a specification.</h2>
+
+<p>At this point. We have to check the HTTP/1.1 specification. The related specification is ‘<a href="https://tools.ietf.org/html/rfc7231">Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content</a>’. And of them, all about the HTTP method is <a href="https://tools.ietf.org/html/rfc7231#section-4">here</a>.</p>
+
+<p>To summarize the opinion of support to the POST.</p>
+
+<ul>
+  <li>If change the resource must be the POST method.</li>
+</ul>
+
+<p>So, there is that content in the specification?</p>
+
+<h2 id="safe-methods">Safe Methods</h2>
+
+<p>There is the <strong>Sage Methods</strong> content in the specification.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Request methods are considered “safe” if their defined semantics are
+essentially read-only; i.e., the client does not request, and does
+not expect, any state change on the origin server as a result of
+applying a safe method to a target resource. Likewise, reasonable
+use of a safe method is not expected to cause any harm, loss of
+property, or unusual burden on the origin server.
+</code></pre></div></div>
+
+<p>If change a resource. We must not use the GET.
+But there is some different content in the next contents.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>This definition of safe methods does not prevent an implementation
+from including behavior that is potentially harmful, that is not
+entirely read-only, or that causes side effects while invoking a safe
+method. What is important, however, is that the client did not
+request that additional behavior and cannot be held accountable for
+it. For example, most servers append request information to access
+log files at the completion of every response, regardless of the
+method, and that is considered safe even though the log storage might
+become full and crash the server. Likewise, a safe request initiated
+by selecting an advertisement on the Web will often have the side
+effect of charging an advertising account.
+</code></pre></div></div>
+
+<h2 id="conclude">Conclude</h2>
+
+<p>As I said before. There is a subjective conclusion in this post, that is not the perfect answer.</p>
+
+<p>I think we can use the GET.</p>
+
+<p>The reason is…</p>
+
+<ul>
+  <li>The API is a contract of two sides.</li>
+  <li>If The Client just wants only the get of some resource.</li>
+  <li>Even if included the non-idempotence process at the generated resource in the Server side.</li>
+  <li>There is no problem with the specification, about in the act of ‘GET’ by the Client side rater than the Server processing.</li>
+</ul>
+
+<p>Moreover if supposing the next situation, I think the GET is better.</p>
+
+<p>Firstly the quiz generates and to returns at the request of the Client. And it is the resource generates so will be the POST.
+Later, If quiz service succeeds, begin having problems with the server side performance issue. So, we think need to precompose quiz and just use it. At this time the resource generate does not occur and has to use the GET.</p>
+
+<p>Client requirements did not change. But the server side processing has to change from a resource generate to existing resources.
+Do we have to change the API from the GET to the POST in this situation? And we can persuade to change method to the POST? At first, if we made it the GET. we could avoid this situation.</p>
+
+<p>And so if we think about it. When we make the API, like ‘Information Hiding’ more generally higher level design principle is more important.</p>
+
+<h2 id="addition-consideration">Addition consideration</h2>
+
+<p>After posted this article. I received some comments.</p>
+
+<ul>
+  <li>In this issue, the User Interface and actually the HTTP client has to separate and judgment. The User Interface is of course just want to get resources. And the HTTP client(server side) will be thinking, there is no problem to generate resources in the server side process. (So, the Inner HTTP client is to generate resource by the POST and get the resource by the GET again.)</li>
+  <li>If resource generated by the POST, it returns an id and how about get the resource as the id?</li>
+</ul>
+
+<p>Both are similar opinions. If the client is not interesting to generate resources. if generate resources is right, firstly generate resources by the POST and get generated resources by the GET.</p>
+
+<p>As I said, My opinion remains unchanged. (the GET is better) The reason is first beginning to generate quiz and will be likely to change to the read. The GET is very flexible because the client’s intention is more important than resources.</p>
+
+<p>The reason for wrote more opinions. Because I’m worried that someone always thinks that the GET is better.</p>
+
+<p>If it will be don’t change to read later. as mentioned earlier, to use the POST + GET method. But if we want to decrease even one the HTTP request. Use the GET is better.</p>
+
+<p>Eventually, this post does not the perfect answer. It is just only a reference, You can have to choose in a situation.</p>
+:ET
