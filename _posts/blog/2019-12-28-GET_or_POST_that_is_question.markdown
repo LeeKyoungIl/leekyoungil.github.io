@@ -9,7 +9,7 @@ tags: [http, get, post, method, question]
 
 ![image](https://user-images.githubusercontent.com/4101636/71541301-2cb54100-299a-11ea-9116-da71030360d8.png){: width="100%" }
 
-## Before this post begins.
+## Foreword.
 
 This post is from '[homoefficio.github.io](https://homoefficio.github.io/2019/12/25/GET%EC%9D%B4%EB%83%90-POST%EB%83%90-%EA%B7%B8%EA%B2%83%EC%9D%B4-%EB%AC%B8%EC%A0%9C%EB%A1%9C%EB%8B%A4/?fbclid=IwAR0P4GM-aR9dv0bNMi9RV1gmQ6fgtXNDonsT0HPmSZKdwjzAUAoLfBphqNY)' blog.
 I translated from Korean to English.
@@ -17,21 +17,20 @@ I translated from Korean to English.
 ---
 
 There are some conclusions in this post. But these are not the perfect answers.
-Also, this post doesn't talk about the REST, talk about the content of the HTTP method only.
+Also, this post has nothing to do with the REST, and only deals with the HTTP methods.
 
 ## Question
 
-Generally, When requesting a new resource over provide the contents by the client side, You can send by the POST with include the contents. 
+Generally, When requesting a new resource over provide the contents by the client side, You can send by the POST with include the contents. And no one has any different opinions on that.
 
-But, The client side did not provide contents to the server, just response some resource from the server, actually, the server is a response by generating new resource in this case, Do we have to use the GET or POST?
+But, The Client side want get some resources without did not provide contents to the server, just response some resource from the server, actually, the server is a response by generating new resource in this case, Do we have to use the GET or POST?
 
 For example, if the client is requested to the server by empty contents.
 In other words, If the client doesn't matter about whether the returned quiz is a new one or an existing one.
 
- - GET send '/quizzes/new’ (It is the GET but the Server takes care of generating a new one.)
- - POST send with empty contents ‘/quizzes' (It is the POST but the Server return generating a new one.)
+ - GET : '/quizzes/new’ (It is the GET but the Server takes care of generating a new one.)
+ - POST : ‘/quizzes' with empty contents. (It is the POST but the Server return generating a new one.)
 
-Which is a better way, the GET or POST method?
 I collected some stories about this issue.
 
 ## Opinion to use the POST method
