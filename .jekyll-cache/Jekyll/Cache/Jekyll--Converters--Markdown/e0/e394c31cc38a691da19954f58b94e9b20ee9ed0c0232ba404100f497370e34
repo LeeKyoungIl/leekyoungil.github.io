@@ -1,0 +1,56 @@
+I"�<p>Generally, The Kafka cluster is composed of one more brokers. 
+Normally, there is no problem with the services, if at least one broker remains.</p>
+
+<p>But, The Kafka broker failure may occur. Because. We have to periodic checks are carried out on the status of the broker.</p>
+
+<p>There are several ways of the health check of the Kafka broker.</p>
+
+<h2 id="using-monitoring-tools">Using monitoring tools</h2>
+
+<p>This way is inconvenient need to install external solutions. And developers impossible to always monitoring the system.</p>
+
+<h2 id="using-the-kafka-topic-for-a-health-check">Using The Kafka Topic for a health check.</h2>
+
+<p>Make The Topic for a health check. And publish messages to the Topic. But this way can not check per the brokers.</p>
+
+<h2 id="so-what-should-we-do">So what should we do?</h2>
+
+<p>Generally. The Kafka broker is used as a port number of ‘9092’. So, How about trying to connect with that socket number ‘9092’?</p>
+
+<p>Simply I made a static method about connecting socket.</p>
+
+<p><a href="https://github.com/LeeKyoungIl/illuminati/blob/3a21ca189577ee114696865eb460c74a2badb103/illuminati/illuminati-common/src/main/java/me/phoboslabs/illuminati/common/util/NetworkUtil.java#L5">NetworkUtil.java</a></p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">canIConnect</span><span class="o">(</span><span class="kd">final</span> <span class="nc">String</span> <span class="n">hostName</span><span class="o">,</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">portNumber</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">try</span> <span class="o">(</span><span class="nc">Socket</span> <span class="n">socket</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Socket</span><span class="o">(</span><span class="n">hostName</span><span class="o">,</span> <span class="n">portNumber</span><span class="o">))</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>So, for example, there are three brokers in the cluster. (123.12.12.1:9092, 123.12.12.2:9092, 123.12.12.3:9092)
+I make a method for trying to connect those brokers and count the number to connectable broker.</p>
+
+<p>The detailed code is <a href="https://github.com/LeeKyoungIl/illuminati/blob/master/illuminati/illuminati-processor/src/main/java/me/phoboslabs/illuminati/processor/infra/kafka/impl/KafkaInfraTemplateImpl.java#L138-L172">KafkaInfraTemplateImpl.java</a> 여기를 참고해라.</p>
+
+<p>Below is a simple code.</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">canIConnectCount</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+
+<span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">clusterList</span> <span class="o">=</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="s">"123.12.12.1:9092"</span><span class="o">,</span> <span class="s">"123.12.12.2:9092"</span><span class="o">,</span> <span class="s">"123.12.12.3:9092"</span><span class="o">);</span>
+<span class="k">for</span> <span class="o">(</span><span class="nc">String</span> <span class="n">clusterAddress</span> <span class="o">:</span> <span class="n">clusterList</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">final</span> <span class="nc">String</span><span class="o">[]</span> <span class="n">clusterAddressInfo</span> <span class="o">=</span> <span class="n">clusterAddress</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">":"</span><span class="o">);</span>
+    <span class="kt">boolean</span> <span class="n">connectResult</span> <span class="o">=</span> <span class="nc">NetworkUtil</span><span class="o">.</span><span class="na">canIConnect</span><span class="o">(</span><span class="n">clusterAddressInfo</span><span class="o">[</span><span class="mi">0</span><span class="o">],</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">clusterAddressInfo</span><span class="o">[</span><span class="mi">1</span><span class="o">]));</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">connectResult</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">canIConnectCount</span><span class="o">++;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="k">if</span> <span class="o">(</span><span class="n">canIConnectCount</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"There is "</span> <span class="o">+</span> <span class="nc">String</span><span class="o">.</span><span class="na">valueof</span><span class="o">(</span><span class="n">canIConnectCount</span><span class="o">)</span> <span class="o">+</span> <span class="s">" Kafka broker."</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Use this way, It is possible to respond to failure whenever a message occurs or periodically by checking the broker status in real time.</p>
+:ET
