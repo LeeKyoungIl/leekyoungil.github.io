@@ -43,7 +43,7 @@ public static boolean canIConnect(final String hostName, final int portNumber) {
 So, for example, there are three brokers in the cluster. (123.12.12.1:9092, 123.12.12.2:9092, 123.12.12.3:9092)
 I make a method for trying to connect those brokers and count the number to connectable broker.
 
-The detailed code is [KafkaInfraTemplateImpl.java](https://github.com/LeeKyoungIl/illuminati/blob/master/illuminati/illuminati-processor/src/main/java/me/phoboslabs/illuminati/processor/infra/kafka/impl/KafkaInfraTemplateImpl.java#L138-L172) 여기를 참고해라.
+The detailed code is [KafkaInfraTemplateImpl.java](https://github.com/LeeKyoungIl/illuminati/blob/master/illuminati/illuminati-processor/src/main/java/me/phoboslabs/illuminati/processor/infra/kafka/impl/KafkaInfraTemplateImpl.java#L138-L172) check this out.
 
 Below is a simple code.
 ```java
