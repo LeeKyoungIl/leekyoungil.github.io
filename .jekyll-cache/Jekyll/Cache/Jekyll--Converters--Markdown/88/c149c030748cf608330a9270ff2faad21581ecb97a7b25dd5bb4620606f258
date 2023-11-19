@@ -1,4 +1,4 @@
-I"�f<p>The developers of java application are always to developing with the HashMap, so do I</p>
+I"�f<p>The developers of java application are always to developing with the HashMap, so do I</p>
 
 <p>Most developers are already knows, how the HashMap works in the Java. <br />
 So, this article not handle about theory of the HashMap.</p>
@@ -11,7 +11,7 @@ So, this article explain “resize()” method of the HashMap.</p>
 
 <p>Firstly look at the first comment of “resize()” code.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Initializes or doubles table size.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Initializes or doubles table size.
 </code></pre></div></div>
 
 <p>When input the data of the HashMap, if not enough free space, it must increase the space.<br /></p>
@@ -207,7 +207,7 @@ If data input into the HashMap at the first time, the oldCap value is 16.<br /><
 
 <p>How to set the threshold? (line number 18)</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>newThr = (int)(DEFAULT_LOAD_FACTOR * DEFAULT_INITIAL_CAPACITY);
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>newThr = (int)(DEFAULT_LOAD_FACTOR * DEFAULT_INITIAL_CAPACITY);
 threshold = newThr;
 </code></pre></div></div>
 

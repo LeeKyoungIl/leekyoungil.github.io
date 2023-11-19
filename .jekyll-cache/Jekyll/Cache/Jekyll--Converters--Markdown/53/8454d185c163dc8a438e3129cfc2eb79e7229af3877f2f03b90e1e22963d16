@@ -1,4 +1,4 @@
-I"6<p>When we make the Docker image by the Maven and Dockerfile on the Spring project, we take the <strong><a href="https://github.com/spotify/docker-maven-plugin">docker-maven-plugin</a></strong> among the several plugins these make the Docker image.</p>
+I"\<p>When we make the Docker image by the Maven and Dockerfile on the Spring project, we take the <strong><a href="https://github.com/spotify/docker-maven-plugin">docker-maven-plugin</a></strong> among the several plugins these make the Docker image.</p>
 
 <p>This story is about a occurred exception of connection refused, when I used the docker-maven-plugin.</p>
 
@@ -31,7 +31,7 @@
 
 <p>If you use over the JDK 9, you will meet the error message.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Caused by: java.lang.ClassNotFoundException: javax.activation.DataSource
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Caused by: java.lang.ClassNotFoundException: javax.activation.DataSource
 </code></pre></div></div>
 
 <p>This message is resolved to add the Java activation dependency in the plugin configuration.</p>
@@ -63,7 +63,7 @@
 
 <p>And next problem is the connection refused, at the <strong>mvn docker:build</strong> command executed.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ERROR] Failed to execute goal com.spotify:docker-maven-plugin:0.4.9:build 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ERROR] Failed to execute goal com.spotify:docker-maven-plugin:0.4.9:build 
 (default-cli) on project image-reader-api: Exception caught: java.util.concurrent.ExecutionException: 
 com.spotify.docker.client.shaded.javax.ws.rs.ProcessingException: org.apache.http.conn.HttpHostConnectException: 
 Connect to localhost:2375 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused 

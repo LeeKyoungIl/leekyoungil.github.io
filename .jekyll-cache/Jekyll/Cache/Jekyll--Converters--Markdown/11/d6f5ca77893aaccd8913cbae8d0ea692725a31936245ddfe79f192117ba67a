@@ -1,4 +1,4 @@
-I"Å<h2 id="what-is-the-nginx-reverse-proxy">What is the Nginx reverse proxy</h2>
+I"Ø<h2 id="what-is-the-nginx-reverse-proxy">What is the Nginx reverse proxy</h2>
 
 <p>The Proxy is to connect another network through the server by indirect.</p>
 
@@ -39,7 +39,7 @@
 
 <h2 id="how-to-set-the-nginx-reverse-proxy-cache">How to set the Nginx reverse proxy cache?</h2>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>proxy_cache_path /home/user/cache/nginx levels=1:2 keys_zone=select_cache_zone:10m max_size=2g inactive=15m;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>proxy_cache_path /home/user/cache/nginx levels=1:2 keys_zone=select_cache_zone:10m max_size=2g inactive=15m;
 proxy_cache_key $request_method$request_uri$args;
 
 ...
