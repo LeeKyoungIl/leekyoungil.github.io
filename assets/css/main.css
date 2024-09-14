@@ -861,13 +861,16 @@ footer .lockup a:hover {
     display: flex;
     margin: auto;
     border-radius: 60%;
-    background: url(https://user-images.githubusercontent.com/4101636/50544255-eb793c80-0c32-11e9-9379-fbcec6282702.png) no-repeat;
+    background-image: url('https://user-images.githubusercontent.com/4101636/50544255-eb793c80-0c32-11e9-9379-fbcec6282702.png');
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   .about-lock .face1-img {
     height: 180px;
     width: 180px;
     border-radius: 50%;
-    background: url(https://user-images.githubusercontent.com/4101636/50544255-eb793c80-0c32-11e9-9379-fbcec6282702.png);
+    background-image: url('https://user-images.githubusercontent.com/4101636/50544255-eb793c80-0c32-11e9-9379-fbcec6282702.png');
+    background-size: cover;
     margin: auto;
   }
   .about-lock .flip-container {
